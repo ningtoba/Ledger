@@ -23,7 +23,7 @@
 
 Ledger is a full-fledged, open-source personal finance tracker built with Flutter. It uses Drift SQL for local storage and Firebase for optional sync and backup. Ledger helps you manage budgets, track expenses, set financial goals, and gain insights into your spending — all with a beautiful Material You design.
 
-Ledger is a fork of the excellent [Cashew](https://github.com/jameskokoska/Cashew) by jameskokoska, continuing development with new features and improvements. Development started in September 2021.
+Ledger is a fork of [Cashew](https://github.com/jameskokoska/Cashew) by jameskokoska. Development started in September 2021.
 
 ---
 
@@ -55,7 +55,6 @@ Ledger is a fork of the excellent [Cashew](https://github.com/jameskokoska/Cashe
 - Dynamic color theming (Material You on Android 12+)
 - Custom accent colors
 - Light and dark mode
-- Every app icon changed to Ledger branding
 - Customizable home screen widget dashboard
 
 ### ☁️ Backup & Sync
@@ -78,58 +77,6 @@ Visit [ledger-finance.web.app](https://ledger-finance.web.app/) to use the web v
 
 ### Android
 Download the latest APK or App Bundle from the [Releases page](https://github.com/ningtoba/Ledger/releases).
-
-### iOS
-[Available on the App Store](https://apps.apple.com/us/app/cashew-expense-budget-tracker/id6463662930) (currently pointing to the upstream Cashew release).
-
----
-
-## Screenshots
-
-<a href="https://www.youtube.com/watch?v=Oar9pkc7BSc&t=235s">
-  <div align="center">
-    <img width="80%" src="promotional/youtube-promo/thumbnail-oss.png" alt="Review Video">
-  </div>
-</a>
-<p align="center">
-  Ledger (forked from Cashew) was featured on <a href="https://www.youtube.com/watch?v=Oar9pkc7BSc&t=235s">YouTube</a> in 'The Best Free and Open Source Apps in 2024!'
-</p>
-
-<a href="https://www.youtube.com/watch?v=NYZd7IKn1oY&t=536s">
-  <div align="center">
-    <img width="80%" src="promotional/youtube-promo/thumbnail-year-best.png" alt="Review Video">
-  </div>
-</a>
-<p align="center">
-  The upstream Cashew was featured on <a href="https://www.youtube.com/watch?v=NYZd7IKn1oY&t=536s">YouTube</a> in 'The Best Apps of 2023!'
-</p>
-
-<a href="https://www.youtube.com/watch?v=2MwWmqcn--s&t=261s">
-  <div align="center">
-    <img width="80%" src="promotional/youtube-promo/thumbnail.png" alt="Review Video">
-  </div>
-</a>
-<p align="center">
-  The upstream Cashew was featured on <a href="https://www.youtube.com/watch?v=2MwWmqcn--s&t=261s">YouTube</a> in 'Top Android Apps! (November 2023)'
-</p>
-
-<a href="https://play.google.com/store/apps/editorial?id=mc_apps_new_on_play_fcp">
-  <div align="center">
-    <img width="80%" src="promotional/play-store-feature/play-store-feature.png" alt="Play Store Feature">
-  </div>
-</a>
-<p align="center">
-  The upstream Cashew was featured in <a href="https://play.google.com/store/apps/editorial?id=mc_apps_new_on_play_fcp">Google Play's Editorial 'New Apps We Love'</a> (November 2023)!
-</p>
-
-<a href="https://github.com/nyas1/Material-You-app-list">
-  <div align="center">
-    <img width="80%" src="promotional/material-apps-feature/material-apps-feature.png" alt="Material Apps List Feature">
-  </div>
-</a>
-<p align="center">
-  The upstream Cashew was featured in the <a href="https://github.com/nyas1/Material-You-app-list">Material You Apps List</a> on GitHub!
-</p>
 
 ---
 
@@ -196,10 +143,13 @@ Ledger/
 │   │   ├── widgets/           # Reusable UI components
 │   │   └── colors.dart        # Theme engine & palette
 │   ├── assets/                # Fonts, icons, categories, translations
-│   ├── packages/              # Bundled discontinued packages (modified)
+│   │   └── icon/              # App icon assets
+│   ├── packages/              # Bundled packages
 │   └── test/                  # Unit & widget tests
 ├── .github/                   # CI workflows, PR templates
 ├── promotional/               # Store assets, banners
+├── ROADMAP.md                 # Project roadmap and milestones
+├── CONTRIBUTING.md            # Contribution guidelines
 └── scripts/                   # Build/deploy scripts
 ```
 
@@ -232,19 +182,6 @@ The master translations spreadsheet is available [here](https://docs.google.com/
 ## Automation
 
 See the [FAQ](https://ledger-finance.web.app/faq.html#automation) for information on how to add transactions automatically via app links.
-
----
-
-## Attribution
-
-Ledger is a fork of **[Cashew](https://github.com/jameskokoska/Cashew)** by [jameskokoska](https://github.com/jameskokoska), which is licensed under GPL-3.0.
-
-This is a personal fork maintained by [ningtoba](https://github.com/ningtoba).
-
-Original upstream achievements:
-- Featured on [Google Play's Editorial 'New Apps We Love'](https://play.google.com/store/apps/editorial?id=mc_apps_new_on_play_fcp) (November 2023)
-- Featured in the [Material You Apps List](https://github.com/nyas1/Material-You-app-list) on GitHub
-- Featured in multiple YouTube reviews by 'The Best Free and Open Source Apps' and 'Top Android Apps'
 
 ---
 
