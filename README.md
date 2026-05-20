@@ -1,8 +1,8 @@
-<h1 align="center" style="font-size:28px; line-height:1"><b>Cashew</b></h1>
+<h1 align="center" style="font-size:28px; line-height:1"><b>Ledger</b></h1>
 
 
 <div align="center">
-  <a href="https://cashewapp.web.app/">
+  <a href="https://ledger-finance.web.app/">
     <img alt="Icon" src="promotional/icons/icon.png" width="150px" >
   </a>
 </div>
@@ -17,7 +17,7 @@
   <a href="https://play.google.com/store/apps/details?id=com.budget.tracker_app">
     <img alt="Google Play Badge" src="promotional/store-banners/google-play-badge.png" height="60px">
   </a>
-  <a href="https://github.com/jameskokoska/Cashew/releases/">
+  <a href="https://github.com/ningtoba/Ledger/releases/">
     <img alt="GitHub Badge" src="promotional/store-banners/github-badge.png" height="60px">
   </a>
   <a href="https://budget-track.web.app/">
@@ -26,14 +26,14 @@
 </div>
 
 <h3 align="center" style="font-size:28px; line-height:1">
-  <a href="https://github.com/jameskokoska/Cashew/issues/725">🚀 Cashew Beta Testing</a>
+  <a href="https://github.com/ningtoba/Ledger/issues/725">🚀 Ledger Beta Testing</a>
 </h3>
 
 ---
 
 <br />
 
-<a href="https://cashewapp.web.app/">
+<a href="https://ledger-finance.web.app/">
   <div align="center">
     <img width="95%" src="promotional/GitHub/SocialPreviewGitHub.png" alt="Promo banner">
   </div>
@@ -41,7 +41,7 @@
 
 <br />
 
-Cashew is a full-fledged, feature-rich application designed to empower users in managing their finances effectively. Built using Flutter - with Drift's SQL package, and Firebase - this app offers a seamless and intuitive user experience across various devices. Development started in September 2021.
+Ledger is a full-fledged, feature-rich application designed to empower users in managing their finances effectively. Built using Flutter - with Drift's SQL package, and Firebase - this app offers a seamless and intuitive user experience across various devices. Development started in September 2021 (forked from Cashew).
 
 ---
 
@@ -100,13 +100,13 @@ Cashew is a full-fledged, feature-rich application designed to empower users in 
 
 ## Release
 
-Check out the [official website](https://cashewapp.web.app/)!
+Check out the [official website](https://ledger-finance.web.app/)!
 
-This application is available on the [App Store](https://apps.apple.com/us/app/cashew-expense-budget-tracker/id6463662930), [Google Play](https://play.google.com/store/apps/details?id=com.budget.tracker_app), [GitHub](https://github.com/jameskokoska/Cashew/releases/) and as a [Web App (PWA)](https://budget-track.web.app/).
+This application is available on the [App Store](https://apps.apple.com/us/app/cashew-expense-budget-tracker/id6463662930), [Google Play](https://play.google.com/store/apps/details?id=com.budget.tracker_app), [GitHub](https://github.com/ningtoba/Ledger/releases/) and as a [Web App (PWA)](https://ledger-finance.web.app/).
 
 ### Changelog
 
-Changes and progress about development is all heavily documented in GitHub [commits](https://github.com/jameskokoska/Cashew/commits/main) and in the [changelog](https://github.com/jameskokoska/Cashew/blob/main/budget/lib/widgets/showChangelog.dart)
+Changes and progress about development is all heavily documented in GitHub [commits](https://github.com/ningtoba/Ledger/commits/main) and in the [changelog](https://github.com/ningtoba/Ledger/blob/main/budget/lib/widgets/showChangelog.dart)
 
 ## Key Features
 
@@ -159,7 +159,7 @@ Changes and progress about development is all heavily documented in GitHub [comm
 
 ## Automation
 
-See the `Automation` section on the FAQ website for information on how to add transactions automatically: https://cashewapp.web.app/faq.html#automation
+See the `Automation` section on the FAQ website for information on how to add transactions automatically: https://ledger-finance.web.app/faq.html#automation
 
 ## Bundled Packages
 
@@ -181,7 +181,7 @@ The translations are available here: https://docs.google.com/spreadsheets/d/1QQq
 
 ### Pull Requests and Contributions
 
-Unfortunately, I am currently not accepting contributions due to licensing and credits. Since this application turns some profits, I want to avoid any muddy water when it comes to compensation for contributions. You are free to submit an [issue](https://github.com/jameskokoska/Cashew/issues) and I can consider it!
+Unfortunately, I am currently not accepting contributions due to licensing and credits. Since this application turns some profits, I want to avoid any muddy water when it comes to compensation for contributions. You are free to submit an [issue](https://github.com/ningtoba/Ledger/issues) and I can consider it!
 
 ### Android Release
 
@@ -208,7 +208,7 @@ Note: required Firebase.
 - Push the tag
 - `git push origin <version>`
 - Create the release and upload binaries
-- https://github.com/jameskokoska/Cashew/releases/new
+- https://github.com/ningtoba/Ledger/releases/new
 
 ### Scripts
 
@@ -222,7 +222,7 @@ Note: required Firebase.
 
 `update_translations.bat`
 
-- Downloads the latest version of Cashew translations. Runs `budget\assets\translations\generate-translations.py`
+- Downloads the latest version of Ledger translations. Runs `budget\\assets\\translations\\generate-translations.py`
 
 ### Develop Wirelessly on Android
 
