@@ -59,9 +59,6 @@ Ledger is a fork of [Cashew](https://github.com/jameskokoska/Cashew) by jameskok
 
 ## Quick Start
 
-### Web (PWA)
-Visit [ledger-finance.web.app](https://ledger-finance.web.app/) to use the web version directly in your browser. It works as a Progressive Web App — install it to your home screen!
-
 ### Android
 Download the latest APK or App Bundle from the [Releases page](https://github.com/ningtoba/Ledger/releases).
 
@@ -162,12 +159,6 @@ python3 budget/assets/translations/generate-translations.py
 ```
 
 The master translations spreadsheet is available [here](https://docs.google.com/spreadsheets/d/1QQqt28cmrby6JqxLm-oxUXCuM3alniLJ6IRhcPJDOtk/edit?usp=sharing). If you would like to help translate, please reach out via email: dapperappdeveloper@gmail.com.
-
----
-
-## Automation
-
-See the [FAQ](https://ledger-finance.web.app/faq.html#automation) for information on how to add transactions automatically via app links.
 
 ---
 

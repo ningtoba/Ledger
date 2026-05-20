@@ -863,7 +863,7 @@ class AboutLinks extends StatelessWidget {
             _buildTappable(
               context: context,
               isExternalLink: true,
-              onTap: () => openUrl("https://ledger-finance.web.app/faq.html"),
+              onTap: () => openUrl("https://cashewapp.web.app/faq.html"),
               icon: appStateSettings["outlinedIcons"]
                   ? Icons.live_help_outlined
                   : Icons.live_help_rounded,
@@ -904,7 +904,7 @@ class AboutLinks extends StatelessWidget {
             _buildTappable(
               context: context,
               isExternalLink: true,
-              onTap: () => openUrl("https://ledger-finance.web.app/policy.html"),
+              onTap: () => openUrl("https://cashewapp.web.app/policy.html"),
               icon: appStateSettings["outlinedIcons"]
                   ? Icons.policy_outlined
                   : Icons.policy_rounded,

@@ -351,7 +351,7 @@ class AccountsPageState extends State<AccountsPage> {
                                 borderRadius: 15,
                                 onTap: () {
                                   openUrl(
-                                      "https://ledger-finance.web.app/policy.html");
+                                      "https://cashewapp.web.app/policy.html");
                                 },
                                 child: Padding(
                                   padding:

@@ -709,7 +709,7 @@ showHelpRestorePopup(BuildContext context) {
       if (openResult == false) copyToClipboard("dapperappdeveloper@gmail.com");
     },
     onExtra: () =>
-        openUrl("https://ledger-finance.web.app/faq.html#restoring-purchases"),
+        openUrl("https://cashewapp.web.app/faq.html#restoring-purchases"),
     onExtraLabel: "FAQ".tr(),
   );
 }

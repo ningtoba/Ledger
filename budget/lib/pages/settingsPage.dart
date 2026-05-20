@@ -107,7 +107,7 @@ class MoreActionsPageState extends State<MoreActionsPage> {
                       ? Icons.live_help_outlined
                       : Icons.live_help_rounded,
                   action: () {
-                    openUrl("https://ledger-finance.web.app/faq.html");
+                    openUrl("https://cashewapp.web.app/faq.html");
                   },
                 ),
             ],
