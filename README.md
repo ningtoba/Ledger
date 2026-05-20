@@ -1,51 +1,90 @@
-<h1 align="center" style="font-size:28px; line-height:1"><b>Ledger</b></h1>
-
+# Ledger
 
 <div align="center">
   <a href="https://ledger-finance.web.app/">
-    <img alt="Icon" src="promotional/icons/icon.png" width="150px" >
+    <img alt="Ledger Logo" src="promotional/icons/icon.png" width="150px">
   </a>
 </div>
 
-
-<br />
+<br>
 
 <div align="center">
-  <a href="https://apps.apple.com/us/app/cashew-expense-budget-tracker/id6463662930">
-    <img alt="iOS App Store Badge" src="promotional/store-banners/app-store-badge.png" height="60px">
-  </a>
-  <a href="https://play.google.com/store/apps/details?id=com.budget.tracker_app">
-    <img alt="Google Play Badge" src="promotional/store-banners/google-play-badge.png" height="60px">
-  </a>
   <a href="https://github.com/ningtoba/Ledger/releases/">
     <img alt="GitHub Badge" src="promotional/store-banners/github-badge.png" height="60px">
   </a>
-  <a href="https://budget-track.web.app/">
+  <a href="https://ledger-finance.web.app/">
     <img alt="PWA Badge" src="promotional/store-banners/pwa-badge.png" height="60px">
   </a>
 </div>
 
-<h3 align="center" style="font-size:28px; line-height:1">
-  <a href="https://github.com/ningtoba/Ledger/issues/725">🚀 Ledger Beta Testing</a>
-</h3>
-
 ---
 
-<br />
+## Overview
 
-<a href="https://ledger-finance.web.app/">
-  <div align="center">
-    <img width="95%" src="promotional/GitHub/SocialPreviewGitHub.png" alt="Promo banner">
-  </div>
-</a>
+Ledger is a full-fledged, open-source personal finance tracker built with Flutter. It uses Drift SQL for local storage and Firebase for optional sync and backup. Ledger helps you manage budgets, track expenses, set financial goals, and gain insights into your spending — all with a beautiful Material You design.
 
-<br />
-
-Ledger is a full-fledged, feature-rich application designed to empower users in managing their finances effectively. Built using Flutter - with Drift's SQL package, and Firebase - this app offers a seamless and intuitive user experience across various devices. Development started in September 2021 (forked from Cashew).
+Ledger is a fork of the excellent [Cashew](https://github.com/jameskokoska/Cashew) by jameskokoska, continuing development with new features and improvements. Development started in September 2021.
 
 ---
 
 ## Features
+
+### 💰 Transaction Management
+- Multiple transaction types: expense, income, upcoming, subscriptions, recurring, credit (lent), debt (borrowed)
+- Custom categories with icons and colors
+- Smart auto-categorization from transaction titles
+- Search, filter, and bulk selection for transactions
+
+### 📊 Budget Management
+- Custom budgets with flexible time periods (weekly, monthly, yearly, custom)
+- Per-category spending limits within budgets
+- Past budget history and comparison
+- Goals and long-term loan tracking
+
+### 💱 Multi-Currency Support
+- Live exchange rates via CDN
+- Automatic currency conversion across accounts
+- Configurable per-account currency settings
+
+### 🔒 Security & Privacy
+- Biometric lock (fingerprint, face)
+- Google Sign-In for backup sync
+- Local-first architecture — your data stays on your device
+
+### 🎨 Material You Design
+- Dynamic color theming (Material You on Android 12+)
+- Custom accent colors
+- Light and dark mode
+- Every app icon changed to Ledger branding
+- Customizable home screen widget dashboard
+
+### ☁️ Backup & Sync
+- Google Drive backup and restore
+- Cross-device sync via Firebase
+- CSV import/export
+- Full database export
+
+### 🤖 Smart Automation
+- Email notification parsing for auto-transactions
+- App links for pre-filled transaction creation
+- Custom scanner templates
+
+---
+
+## Quick Start
+
+### Web (PWA)
+Visit [ledger-finance.web.app](https://ledger-finance.web.app/) to use the web version directly in your browser. It works as a Progressive Web App — install it to your home screen!
+
+### Android
+Download the latest APK or App Bundle from the [Releases page](https://github.com/ningtoba/Ledger/releases).
+
+### iOS
+[Available on the App Store](https://apps.apple.com/us/app/cashew-expense-budget-tracker/id6463662930) (currently pointing to the upstream Cashew release).
+
+---
+
+## Screenshots
 
 <a href="https://www.youtube.com/watch?v=Oar9pkc7BSc&t=235s">
   <div align="center">
@@ -53,10 +92,8 @@ Ledger is a full-fledged, feature-rich application designed to empower users in 
   </div>
 </a>
 <p align="center">
-  Cashew was featured on <a href="https://www.youtube.com/watch?v=Oar9pkc7BSc&t=235s">YouTube</a> on 'The Best Free and Open Source Apps in 2024!' (and in the thumbnail!)
+  Ledger (forked from Cashew) was featured on <a href="https://www.youtube.com/watch?v=Oar9pkc7BSc&t=235s">YouTube</a> in 'The Best Free and Open Source Apps in 2024!'
 </p>
-
-<br />
 
 <a href="https://www.youtube.com/watch?v=NYZd7IKn1oY&t=536s">
   <div align="center">
@@ -64,10 +101,8 @@ Ledger is a full-fledged, feature-rich application designed to empower users in 
   </div>
 </a>
 <p align="center">
-  Cashew was featured on <a href="https://www.youtube.com/watch?v=NYZd7IKn1oY&t=536s">YouTube</a> on 'The Best Apps of 2023!'
+  The upstream Cashew was featured on <a href="https://www.youtube.com/watch?v=NYZd7IKn1oY&t=536s">YouTube</a> in 'The Best Apps of 2023!'
 </p>
-
-<br>
 
 <a href="https://www.youtube.com/watch?v=2MwWmqcn--s&t=261s">
   <div align="center">
@@ -75,198 +110,200 @@ Ledger is a full-fledged, feature-rich application designed to empower users in 
   </div>
 </a>
 <p align="center">
-  Cashew was featured on <a href="https://www.youtube.com/watch?v=2MwWmqcn--s&t=261s">YouTube</a> on 'Top Android Apps! (November 2023)'
+  The upstream Cashew was featured on <a href="https://www.youtube.com/watch?v=2MwWmqcn--s&t=261s">YouTube</a> in 'Top Android Apps! (November 2023)'
 </p>
 
-<br>
-
-<div align="center">
-  <img width="80%" src="promotional/play-store-feature/play-store-feature.png" alt="Play Store Feature">
-</div>
+<a href="https://play.google.com/store/apps/editorial?id=mc_apps_new_on_play_fcp">
+  <div align="center">
+    <img width="80%" src="promotional/play-store-feature/play-store-feature.png" alt="Play Store Feature">
+  </div>
+</a>
 <p align="center">
-  Cashew was featured on <a href="https://play.google.com/store/apps/editorial?id=mc_apps_new_on_play_fcp">Google Play's Editorial 'New Apps We Love'</a> (November 2023)!
+  The upstream Cashew was featured in <a href="https://play.google.com/store/apps/editorial?id=mc_apps_new_on_play_fcp">Google Play's Editorial 'New Apps We Love'</a> (November 2023)!
 </p>
 
-<br>
-
-<a href="https://github.com/nyas1/Material-You-app-list?tab=readme-ov-file#-economy:~:text=MDY%20Celenganku-,MDY%20Cashew,-MDY%20Allowance%20FOSS">
+<a href="https://github.com/nyas1/Material-You-app-list">
   <div align="center">
     <img width="80%" src="promotional/material-apps-feature/material-apps-feature.png" alt="Material Apps List Feature">
   </div>
 </a>
 <p align="center">
-  Cashew was featured in the <a href="https://github.com/nyas1/Material-You-app-list?tab=readme-ov-file#-economy:~:text=MDY%20Celenganku-,MDY%20Cashew,-MDY%20Allowance%20FOSS">Material You Apps List</a>!
+  The upstream Cashew was featured in the <a href="https://github.com/nyas1/Material-You-app-list">Material You Apps List</a> on GitHub!
 </p>
 
-## Release
+---
 
-Check out the [official website](https://ledger-finance.web.app/)!
+## Tech Stack
 
-This application is available on the [App Store](https://apps.apple.com/us/app/cashew-expense-budget-tracker/id6463662930), [Google Play](https://play.google.com/store/apps/details?id=com.budget.tracker_app), [GitHub](https://github.com/ningtoba/Ledger/releases/) and as a [Web App (PWA)](https://ledger-finance.web.app/).
+| Component | Technology |
+|-----------|------------|
+| Framework | Flutter (Dart) |
+| Database | Drift SQL (SQLite) |
+| State | Provider + shared_preferences |
+| Auth | Firebase Auth + Google Sign-In |
+| Sync | Cloud Firestore + Google Drive API |
+| Payments | in_app_purchase (premium features) |
+| Localization | easy_localization (40+ languages) |
+| CI/CD | GitHub Actions |
 
-### Changelog
+---
 
-Changes and progress about development is all heavily documented in GitHub [commits](https://github.com/ningtoba/Ledger/commits/main) and in the [changelog](https://github.com/ningtoba/Ledger/blob/main/budget/lib/widgets/showChangelog.dart)
+## Building from Source
 
-## Key Features
+### Prerequisites
+- Flutter SDK (3.x or later)
+- Dart SDK (3.x or later)
 
-### 💸 Budget Management
+### Android
+```bash
+cd budget
+flutter pub get
+flutter build appbundle --release
+```
 
-- Custom Budgets and Time Periods: Set up personalized budgets with flexible time periods, such as monthly, weekly, daily, or any custom time period that suits your financial planning needs. A custom time period is useful if you plan on setting a one-time travel budget!
-- Added Budgets: Selectively add transactions to specific budgets, allowing you to focus on specific expense categories.
-- Category Spending Limits per Budget: Set limits for each category within a budget, ensuring responsible spending.
-- Past Budget History Viewing: Analyze your spending habits over time by accessing past budget history, enabling comparison and tracking of financial progress.
-- Goals: Create spending and saving goals and put transactions towards different purchases or savings. Track your progress towards achieving your financial goals.
+### iOS (requires macOS)
+```bash
+cd budget
+flutter pub get
+flutter build ipa
+```
 
-### 💰 Transaction Management
+### Web (PWA)
+```bash
+cd budget
+flutter pub get
+flutter build web --release
+```
 
-- Support for Different Transaction Types: Categorize transactions effectively based on types such as upcoming, subscription, repeating, debts (borrowed), and credit (lent). Each type behaves in certain ways in the interface. Pay your upcoming transactions when you're ready, or mark your lent out transactions as collected.
-- Custom Categories: Create personalized categories to organize transactions according to your unique spending habits. Search through multiple icons and select the default option as expenses or income when adding transactions.
-- Custom Titles: Automatically assign transactions with the same name to specific categories, saving time and ensuring consistency. These titles are stored in memory and popup when you add another transaction with a similar name.
-- Search and Filters: Easily search and filter transactions based on various criteria such as date, category, amount, or custom tags, enabling quick access to information.
-- Easy Editing: Long-press and swipe to select multiple budgets, edit accordingly as needed or delete multiple at once.
+### Firebase Deployment
+```bash
+firebase deploy
+```
 
-### 💱 Financial Flexibility
+---
 
-- Multiple Currencies and Accounts: Manage finances across different currencies and accounts with up-to-date conversion rates for accurate calculations and effortless currency conversions. The interface shows the original amount added and the converted amount to the selected account.
-- Switch Accounts and Currencies with Ease: On the homepage, easily select a different account and currency and everything will be converted automatically in an instant.
+## Project Structure
 
-### 🔒 Enhanced Security and Accessibility
+```
+Ledger/
+├── budget/                    # Flutter app package
+│   ├── lib/
+│   │   ├── database/          # Drift schema, tables, migrations
+│   │   │   └── tables/        # Domain module table definitions
+│   │   ├── pages/             # Screen/page widgets
+│   │   ├── struct/            # App state, settings, utilities
+│   │   ├── utils/             # Focused utility helpers
+│   │   ├── widgets/           # Reusable UI components
+│   │   └── colors.dart        # Theme engine & palette
+│   ├── assets/                # Fonts, icons, categories, translations
+│   ├── packages/              # Bundled discontinued packages (modified)
+│   └── test/                  # Unit & widget tests
+├── .github/                   # CI workflows, PR templates
+├── promotional/               # Store assets, banners
+└── scripts/                   # Build/deploy scripts
+```
 
-- Biometric Lock: Secure budget data using biometric authentication, adding an extra layer of privacy.
-- Google Login: Conveniently log in to the app using your Google account, ensuring a streamlined and hassle-free authentication process.
+---
 
-### 🎨 User Experience and Design
+## Development
 
-- Material You Design: Enjoy a visually appealing and modern interface, following the principles of Material You design for a delightful user experience.
-- Custom Accent Color: Personalize the app by selecting a custom accent color that suits your style, or follow that of the system.
-- Light and Dark Mode: Seamlessly switch between light and dark themes to optimize visibility and reduce eye strain.
-- Customizable Home Screen: Tailor the home screen layout and widgets to display the financial information that matters most to you, providing a personalized and efficient dashboard.
-- Detailed Graph Visuals: Gain valuable insights into spending patterns through detailed and interactive graphs, visualizing financial data at a glance.
-- Beautiful Adaptive UI: A responsive user interface that adapts flawlessly to both web and mobile platforms, providing an immersive and consistent user experience across devices.
+### Running Tests
+```bash
+cd budget
+flutter test
+```
 
-### ☁ Backup and Syncing
+### Code Analysis
+```bash
+cd budget
+flutter analyze
+```
 
-- Cross-Device Sync: Keep budget data synchronized across all devices, ensuring access to financial information wherever you go.
-- Google Drive Backup: Safeguard budget data by utilizing Google Drive's backup functionality, allowing easy restoration of data if needed.
+### Translations
+Translations are available as CSV-generated JSON files under `assets/translations/generated/`. To update:
+```bash
+python3 budget/assets/translations/generate-translations.py
+```
 
-### 💿 Smart Automation
+The master translations spreadsheet is available [here](https://docs.google.com/spreadsheets/d/1QQqt28cmrby6JqxLm-oxUXCuM3alniLJ6IRhcPJDOtk/edit?usp=sharing). If you would like to help translate, please reach out via email: dapperappdeveloper@gmail.com.
 
-- Notifications: Stay informed about important financial events and receive timely reminders for budget goals, transactions, and upcoming due dates.
-- Import CSV Files: Seamlessly import financial data by uploading CSV files, facilitating a smooth transition from other applications or platforms.
-- Import Google Sheets: Seamlessly import Google Sheets tables, quickly importing many transactions from a spreadsheet.
-- App Links: Automatically create transactions with pre-filled data using app linking (documentation below)
+---
 
 ## Automation
 
-See the `Automation` section on the FAQ website for information on how to add transactions automatically: https://ledger-finance.web.app/faq.html#automation
+See the [FAQ](https://ledger-finance.web.app/faq.html#automation) for information on how to add transactions automatically via app links.
 
-## Bundled Packages
+---
 
-This repository contains, bundled in, modified versions of the discontinued packages listed below. They can be found in the folder `/budget/packages`
+## Attribution
 
-- https://pub.dev/packages/implicitly_animated_reorderable_list
-- https://pub.dev/packages/sliding_sheet
+Ledger is a fork of **[Cashew](https://github.com/jameskokoska/Cashew)** by [jameskokoska](https://github.com/jameskokoska), which is licensed under GPL-3.0.
 
-## Translations
+This is a personal fork maintained by [ningtoba](https://github.com/ningtoba).
 
-The translations are available here: https://docs.google.com/spreadsheets/d/1QQqt28cmrby6JqxLm-oxUXCuM3alniLJ6IRhcPJDOtk/edit?usp=sharing. If you would like to help translate, please reach out on email: dapperappdeveloper@gmail.com
+Original upstream achievements:
+- Featured on [Google Play's Editorial 'New Apps We Love'](https://play.google.com/store/apps/editorial?id=mc_apps_new_on_play_fcp) (November 2023)
+- Featured in the [Material You Apps List](https://github.com/nyas1/Material-You-app-list) on GitHub
+- Featured in multiple YouTube reviews by 'The Best Free and Open Source Apps' and 'Top Android Apps'
 
-### To Update Translations
+---
 
-1. Run `budget\assets\translations\generate-translations.py`
-2. Restart the application
+## License
+
+[GNU General Public License v3.0](LICENSE)
+
+---
+
+## Contributing
+
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to this project.
+
+---
 
 ## Developer Notes
 
-### Pull Requests and Contributions
-
-Unfortunately, I am currently not accepting contributions due to licensing and credits. Since this application turns some profits, I want to avoid any muddy water when it comes to compensation for contributions. You are free to submit an [issue](https://github.com/ningtoba/Ledger/issues) and I can consider it!
-
-### Android Release
-
-- To build an app-bundle Android release, run `flutter build appbundle --release`
-
-Note: required Android SDK.
-
-### iOS Release
-
-- To build an IPA iOS release, run `flutter build ipa`
-
-Note: requires MacOS.
-
-### Firebase Deployment
-
-- To deploy to firebase, run `firebase deploy`
-
-Note: required Firebase.
-
-### GitHub release
-
-- Create a tag for the current version specified in `pubspec.yaml`
-- `git tag <version>`
-- Push the tag
-- `git push origin <version>`
-- Create the release and upload binaries
-- https://github.com/ningtoba/Ledger/releases/new
-
-### Scripts
-
-`deploy_and_build_windows.bat`
-
-- Deploy to Firebase and build the apk and appbundle
-
-`open_release_builds.bat`
-
-- Opens the location of the built apk and appbundle
-
-`update_translations.bat`
-
-- Downloads the latest version of Ledger translations. Runs `budget\\assets\\translations\\generate-translations.py`
-
-### Develop Wirelessly on Android
-
-- `adb tcpip 5555`
-- `adb connect <IP>`
-- Get the phone's IP by going to `About Phone` > `Status Information` > `IP Address`
-
-### Migrate Database
-
-1. Make any database changes to the schema and tables
-2. Bump the schema version
-   - Change `int schemaVersionGlobal = ...+1` in `tables.dart`
-3. Make sure you are in application root directory
-   - `cd .\budget\`
-4. Generate database code
-   - Run `dart run build_runner build`
-5. Export the new schema
-   - Generate schema dump for the newly created schema
-   - Replace `[schemaVersion]` in the command below with the value of `schemaVersionGlobal`
-   - Run `dart run drift_dev schema dump lib\database\tables.dart drift_schemas//drift_schema_v[schemaVersion].json`
-   - Read more: https://drift.simonbinder.eu/docs/advanced-features/migrations/#exporting-the-schema
-6. Generate step-by-step migrations
-   - Run `dart run drift_dev schema steps drift_schemas/ lib\database\schema_versions.dart`
-7. Implement migration strategy
-   - Edit `await stepByStep(...)` function in `tables.dart` and add the migration strategy for the new version migration
-
-### Get Platform
-
-- Use `getPlatform()` from `functions.dart`
-- Since `Platform` is not supported on web, we must create a wrapper and always use this to determine the current platform
-
-### Push Route
-
-- If we want to navigate to a new page, stick to `pushRoute(context, page)` function from `functions.dart`
-- It handles the platform routing and `PageRouteBuilder`
-
 ### Wallets vs. Accounts
-
-- `Wallets` have been been renamed to `Accounts` on the front-end but internally, the name `Wallet` is still used.
+`Wallets` have been renamed to `Accounts` on the front-end but internally, the name `Wallet` is still used.
 
 ### Objectives vs. Goals
-
-- `Objectives` have been been renamed to `Goals` on the front-end but internally, the name `Objectives` is still used.
+`Objectives` have been renamed to `Goals` on the front-end but internally, the name `Objectives` is still used.
 
 ### Long Term Loans
+Long term loans create a goal. However, the goals total is not used. Instead the total of the goal is calculated by totalling the proper polarity of transactions of the opposite type. For example, if it was a loan of $100 lent out, the initial transaction would be $100 of negative polarity (expense) and that would be the total of the goal. When a payment is made, it is made in the opposite (positive) polarity (income) and added to the total 'paid back'. We can easily find how much is remaining by taking the difference (or the addition including polarities).
 
-- Long term loans create a goal. However, the goals total is not used. Instead the total of the goal is calculated by totalling the proper polarity of transactions of the opposite type. For example, if it was a loan of 100$ lent out, the initial transaction would be 100$ of negative polarity (expense) and that would be the total of the goal. When a payment is made, it is made in the opposite (positive) polarity (income) and added to the total 'paid back'. We can easily find how much is remaining by taking the difference (or the addition including polarities).
+### Bundled Packages
+This repository contains, bundled in, modified versions of the discontinued packages listed below. They can be found in the folder `/budget/packages`:
+
+- [implicitly_animated_reorderable_list](https://pub.dev/packages/implicitly_animated_reorderable_list)
+- [sliding_sheet](https://pub.dev/packages/sliding_sheet)
+
+### GitHub Release
+1. Create a tag for the current version specified in `pubspec.yaml`
+2. `git tag <version>`
+3. Push the tag: `git push origin <version>`
+4. Create the release and upload binaries at https://github.com/ningtoba/Ledger/releases/new
+
+### Develop Wirelessly on Android
+```bash
+adb tcpip 5555
+adb connect <IP>
+```
+Get the phone's IP by going to `About Phone` > `Status Information` > `IP Address`.
+
+### Migrate Database
+1. Make any database changes to the schema and tables
+2. Bump the schema version — change `int schemaVersionGlobal = ...+1` in `tables.dart`
+3. Change to the app directory: `cd budget/`
+4. Generate database code: `dart run build_runner build`
+5. Export the new schema:
+   - Generate schema dump for the newly created schema
+   - Replace `[schemaVersion]` with the value of `schemaVersionGlobal`
+   - Run: `dart run drift_dev schema dump lib/database/tables.dart drift_schemas/drift_schema_v[schemaVersion].json`
+6. Generate step-by-step migrations: `dart run drift_dev schema steps drift_schemas/ lib/database/schema_versions.dart`
+7. Implement migration strategy in the `await stepByStep(...)` function in `tables.dart`
+
+### Platform Detection
+Use `getPlatform()` from `functions.dart` instead of `Platform` since `Platform` is not supported on web.
+
+### Routing
+Use `pushRoute(context, page)` from `functions.dart` for navigation — it handles platform routing and `PageRouteBuilder`.
