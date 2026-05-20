@@ -51,7 +51,7 @@ class AboutPageState extends State<AboutPage> {
       runSpacing: 10,
       children: [
         Image(
-          image: AssetImage("assets/icon/icon-small.png"),
+          image: AssetImage("assets/icon/logo.png"),
           height: 70,
         ),
         Column(
