@@ -191,12 +191,6 @@ See the [FAQ](https://ledger-finance.web.app/faq.html#automation) for informatio
 
 ---
 
-## Contributing
-
-Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to this project.
-
----
-
 ## Developer Notes
 
 ### Wallets vs. Accounts
