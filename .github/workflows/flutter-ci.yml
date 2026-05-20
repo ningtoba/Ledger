@@ -1,0 +1,61 @@
+name: Flutter CI
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  analyze:
+    name: Analyze & Format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.x'
+      - name: Install dependencies
+        run: flutter pub get
+        working-directory: ./budget
+      - name: Analyze
+        run: flutter analyze
+        working-directory: ./budget
+      - name: Check formatting
+        run: dart format --set-exit-if-changed lib/
+        working-directory: ./budget
+
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.x'
+      - name: Install dependencies
+        run: flutter pub get
+        working-directory: ./budget
+      - name: Run tests
+        run: flutter test --coverage
+        working-directory: ./budget
+      - name: Upload coverage
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: ./budget/coverage
+          fail_ci_if_error: false
+
+  build-web:
+    name: Build Web
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.x'
+      - name: Install dependencies
+        run: flutter pub get
+        working-directory: ./budget
+      - name: Build web
+        run: flutter build web --release
+        working-directory: ./budget
