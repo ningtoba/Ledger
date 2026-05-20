@@ -27,6 +27,14 @@ import 'package:budget/struct/settings.dart';
 import 'package:budget/struct/currencyFunctions.dart';
 import 'package:budget/struct/randomConstants.dart';
 
+// Re-export the new modularized utility files for backward compatibility
+export 'utils/money_format.dart';
+export 'utils/date_utils.dart';
+export 'utils/platform_utils.dart';
+export 'utils/string_utils.dart';
+export 'utils/ui_utils.dart';
+export 'utils/app_constants.dart';
+
 extension CapExtension on String {
   String get capitalizeFirst =>
       this.length > 0 ? '${this[0].toUpperCase()}${this.substring(1)}' : '';
@@ -280,27 +288,6 @@ String convertToMoney(AllWallets allWallets, double amount,
   }
 
   return formatOutput;
-  // if (finalNumber != null &&
-  //     !finalNumber
-  //         .abs()
-  //         .toStringAsFixed(numberDecimals)
-  //         .split(".")[1]
-  //         .startsWith("0" * numberDecimals)) {
-  //   return currency.format(amount);
-  // }
-  // if ((finalNumber != null &&
-  //         finalNumber
-  //             .abs()
-  //             .toStringAsFixed(numberDecimals)
-  //             .split(".")[1]
-  //             .startsWith("0" * numberDecimals)) ||
-  //     formatOutput.substring(formatOutput.length - numberDecimals) ==
-  //         "0" * numberDecimals) {
-  //   // Do not show the zeroes
-  //   return formatOutput.replaceRange(
-  //       formatOutput.length - numberDecimals - 1, formatOutput.length, '');
-  // }
-  // return currency.format(amount);
 }
 
 String formatOutputWithNewDelimiterAndDecimal({
@@ -323,7 +310,7 @@ String formatOutputWithNewDelimiterAndDecimal({
   if (appStateSettings["numberFormatCurrencyFirst"] == false) {
     return negativeSign +
         input +
-        (symbol.length > 0 ? "  " : "") +
+        (symbol.length > 0 ? "\u200A\u200A" : "") +
         symbol +
         (currencyName ?? "");
   } else {
@@ -910,18 +897,6 @@ String pluralString(bool condition, String string) {
     return string + "s";
 }
 
-// String? getOSInsideWeb() {
-//   if (kIsWeb) {
-//     final userAgent = window.navigator.userAgent.toString().toLowerCase();
-//     if (userAgent.contains("(macintosh")) return "iOS";
-//     if (userAgent.contains("(iphone")) return "iOS";
-//     if (userAgent.contains("(linux")) return "Android";
-//     return "web";
-//   } else {
-//     return null;
-//   }
-// }
-
 bool lockAppWaitForRestart = false;
 void restartAppPopup(context,
     {String? subtitle, String? description, String? codeBlock}) async {
@@ -948,7 +923,6 @@ void restartAppPopup(context,
           ? Icons.restart_alt_outlined
           : Icons.restart_alt_rounded,
       barrierDismissible: false,
-      // Show code widget with the name of the file monospace font
     );
   } else {
     // Pop all routes, select home tab
@@ -992,16 +966,6 @@ popRoute<T extends Object?>(BuildContext? context, [T? result]) {
   if (context == null) contextToPop = navigatorKey.currentContext;
   if (contextToPop == null) return;
   Navigator.of(contextToPop, rootNavigator: false).pop(result);
-  // bool hasPopped = false;
-  // Navigator.of(contextToPop, rootNavigator: true).popUntil((route) {
-  //   if (route.isFirst) return true;
-  //   if (hasPopped == false) {
-  //     hasPopped = true;
-  //     return route.isFirst;
-  //   } else {
-  //     return true;
-  //   }
-  // });
 }
 
 Future<bool> maybePopRoute<T extends Object?>(BuildContext? context,
@@ -1027,7 +991,7 @@ Future<dynamic> pushRoute(BuildContext? context, Widget page,
   if (contextToPush == null) return;
 
   minimizeKeyboard(contextToPush);
-  // if (appStateSettings["iOSNavigation"]) {
+  // if (appStateSettings[\"iOSNavigation\"]) {
   //   return await Navigator.push(
   //     context,
   //     CustomMaterialPageRoute(builder: (context) => page),
@@ -1100,7 +1064,7 @@ double getKeyboardHeight(context) {
       .bottom;
 }
 
-double getKeyboardHeightForceBuild(context) {
+double getKeyboardHeightForceBuild(BuildContext context) {
   return MediaQuery.of(context).viewInsets.bottom;
 }
 
@@ -1301,17 +1265,17 @@ Future<double?> readAmountFromClipboard({bool showSnackbar = true}) async {
 double? getAmountFromString(String inputString) {
   bool isNegative = false;
   if (inputString.contains("-") ||
-      inputString.contains("—") ||
-      inputString.contains("−") ||
-      inputString.contains("–") ||
-      inputString.contains("‐") ||
-      inputString.contains("−") ||
-      inputString.contains("⁃") ||
-      inputString.contains("‑") ||
-      inputString.contains("‒") ||
-      inputString.contains("–") ||
-      inputString.contains("—") ||
-      inputString.contains("―")) {
+      inputString.contains("\u2014") ||
+      inputString.contains("\u2212") ||
+      inputString.contains("\u2013") ||
+      inputString.contains("\u2010") ||
+      inputString.contains("\u2212") ||
+      inputString.contains("\u2043") ||
+      inputString.contains("\u2011") ||
+      inputString.contains("\u2012") ||
+      inputString.contains("\u2013") ||
+      inputString.contains("\u2014") ||
+      inputString.contains("\u2015")) {
     isNegative = true;
   }
   if (getDecimalSeparator() == ",") {
@@ -1436,12 +1400,12 @@ String addAmountToString(String string, int amount,
     {String? extraText, bool addCommaWithExtraText = true}) {
   return string +
       " " +
-      "( ×" +
+      "(\u200B\u00D7" +
       amount.toString() +
       (extraText == null
           ? ""
           : (addCommaWithExtraText ? ", " : " ") + (extraText)) +
-      " )";
+      "\u200B)";
 }
 
 int directionalityReverse(BuildContext context) {

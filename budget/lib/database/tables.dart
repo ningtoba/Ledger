@@ -24,6 +24,22 @@ import 'package:flutter/material.dart' show DateTimeRange;
 import 'package:budget/pages/activityPage.dart';
 
 import 'package:flutter/material.dart' show RangeValues;
+
+// Re-export the new modularized files for backward compatibility
+export 'tables/enums.dart';
+export 'tables/converters.dart';
+export 'tables/wallets_table.dart';
+export 'tables/categories_table.dart';
+export 'tables/transactions_table.dart';
+export 'tables/budgets_table.dart';
+export 'tables/associated_titles_table.dart';
+export 'tables/objectives_table.dart';
+export 'tables/app_settings_table.dart';
+export 'tables/scanner_templates_table.dart';
+export 'tables/delete_logs_table.dart';
+export 'tables/shared_budget_helpers.dart';
+export 'tables/database.dart' hide FinanceDatabase, _$FinanceDatabaseMixin;
+
 part 'tables.g.dart';
 
 int schemaVersionGlobal = 46;
@@ -38,6 +54,10 @@ const int COLOUR_LIMIT = 50;
 // Query Constants
 const int DEFAULT_LIMIT = 100000;
 const int DEFAULT_OFFSET = 0;
+
+// NOTE: Enums, converters, and table classes are now re-exported from tables/
+// sub-modules. See tables/enums.dart, tables/converters.dart, etc.
+// They are still defined below for drift compatibility.
 
 enum BudgetReoccurence { custom, daily, weekly, monthly, yearly }
 
