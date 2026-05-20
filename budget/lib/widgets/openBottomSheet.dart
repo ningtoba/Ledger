@@ -1,17 +1,17 @@
 import 'package:budget/functions.dart';
 import 'package:budget/struct/settings.dart';
 import 'package:budget/widgets/navigationSidebar.dart';
-import 'package:budget/widgets/textInput.dart';
 import 'package:flutter/material.dart';
 import 'package:budget/colors.dart';
-import 'package:flutter/services.dart';
-import 'package:sliding_sheet/sliding_sheet.dart';
 import 'package:budget/widgets/scrollbarWrap.dart';
+
+// Deprecated: kept for backward compatibility with callers that reference
+// these controllers. They no longer have any effect since sliding_sheet was removed.
+dynamic bottomSheetControllerGlobalCustomAssigned;
+dynamic bottomSheetControllerGlobal;
 
 bool getIsFullScreen(context) {
   return getWidthNavigationSidebar(context) > 0;
-  double maxWidth = 700;
-  return MediaQuery.sizeOf(context).width > maxWidth;
 }
 
 double getWidthBottomSheet(context) {
@@ -64,10 +64,7 @@ Color getPopupBackgroundColor(BuildContext context) {
       : getColor(context, "lightDarkAccent");
 }
 
-SheetController? bottomSheetControllerGlobalCustomAssigned;
-
-late SheetController bottomSheetControllerGlobal;
-// Set snap to false if there is a keyboard
+// Replaces sliding_sheet with native Flutter showModalBottomSheet + DraggableScrollableSheet
 Future openBottomSheet(
   context,
   child, {
@@ -76,148 +73,79 @@ Future openBottomSheet(
   bool resizeForKeyboard = true,
   bool showScrollbar = false,
   bool fullSnap = false,
-  bool popupWithKeyboard =
-      false, // If the popup is shown and an on screen keyboard focus is immediately required
+  bool popupWithKeyboard = false,
   bool isDismissable = true,
   bool useCustomController = false,
   bool reAssignBottomSheetControllerGlobal = true,
   Widget Function(BuildContext context, ScrollController scrollController,
-          SheetState sheetState)?
+          double sheetProgress)?
       customBuilder,
   bool useParentContextForTheme = true,
 }) async {
   //minimize keyboard when open
   minimizeKeyboard(context);
-  if (reAssignBottomSheetControllerGlobal)
-    bottomSheetControllerGlobal = new SheetController();
-  if (useCustomController == true)
-    bottomSheetControllerGlobalCustomAssigned = new SheetController();
-
-  // Fix over-scroll stretch when keyboard pops up quickly
-  if (popupWithKeyboard) {
-    Future.delayed(Duration(milliseconds: 100), () {
-      (useCustomController
-              ? bottomSheetControllerGlobalCustomAssigned
-              : bottomSheetControllerGlobal)
-          ?.scrollTo(0, duration: Duration(milliseconds: 100));
-    });
-  }
 
   BuildContext? themeContext =
       useParentContextForTheme && isContextValidForTheme(context)
           ? context
           : null;
 
-  return await showSlidingBottomSheet(
-    context,
+  return showModalBottomSheet(
+    context: context,
     useRootNavigator: false,
-    resizeToAvoidBottomInset: resizeForKeyboard,
-    // getOSInsideWeb() == "iOS" ? false : resizeForKeyboard,
+    isScrollControlled: true,
+    enableDrag: isDismissable,
+    backgroundColor: Colors.transparent,
+    barrierColor: Colors.black54,
     builder: (context) {
       if (checkIfDefaultThemeData(themeContext)) themeContext = null;
 
-      double deviceAspectRatio =
-          MediaQuery.sizeOf(context).height / MediaQuery.sizeOf(context).width;
       Color bottomPaddingColor =
           getPopupBackgroundColor(themeContext ?? context);
 
-      return SlidingSheetDialog(
-        isDismissable: isDismissable,
-        maxWidth: getWidthBottomSheet(context),
-        scrollSpec: ScrollSpec(
-          overscroll: false,
-          overscrollColor: Colors.transparent,
-          showScrollbar: showScrollbar,
-          scrollbar: ((child) => ScrollbarWrap(child: child)),
+      return Container(
+        constraints: BoxConstraints(
+          maxWidth: getWidthBottomSheet(context),
         ),
-        controller: useCustomController
-            ? bottomSheetControllerGlobalCustomAssigned
-            : bottomSheetControllerGlobal,
-        elevation: 0,
-        isBackdropInteractable: true,
-        dismissOnBackdropTap: true,
-        cornerRadiusOnFullscreen: 0,
-        avoidStatusBar: true,
-        extendBody: true,
-        // Add a header builder so that we get proper extension when full screen sliding sheets
-        // extend properly past that notification bar
-        headerBuilder: (context, state) {
-          return SizedBox(height: 0);
-        },
-        // headerBuilder: (context, _) {
-        //   if (handle) {
-        //     return Padding(
-        //       padding: const EdgeInsetsDirectional.only(bottom: 5.0),
-        //       child: Container(
-        //         width: 40,
-        //         height: 5,
-        //         decoration: BoxDecoration(
-        //           shape: BoxShape.circle,
-        //           color: Colors.red,
-        //         ),
-        //       ),
-        //     );
-        //   } else {
-        //     return SizedBox();
-        //   }
-        // },
-        snapSpec: SnapSpec(
+        decoration: BoxDecoration(
+          color: bottomPaddingColor,
+          borderRadius: BorderRadiusDirectional.only(
+            topStart: Radius.circular(
+                getPlatform() == PlatformOS.isIOS ? 10 : 20),
+            topEnd: Radius.circular(
+                getPlatform() == PlatformOS.isIOS ? 10 : 20),
+          ),
+        ),
+        child: DraggableScrollableSheet(
+          initialChildSize: fullSnap || popupWithKeyboard ? 0.95 : 0.6,
+          minChildSize: 0.3,
+          maxChildSize: 0.95,
+          expand: false,
           snap: snap,
-          // Max snapping when on-screen keyboard because the keyboard takes up screen space!
-          snappings: popupWithKeyboard == false &&
-                  fullSnap == false &&
-                  getIsFullScreen(context) == false &&
-                  deviceAspectRatio > 2
-              ? [0.6, 1]
-              : [0.95, 1],
-          positioning: SnapPositioning.relativeToAvailableSpace,
+          snapSizes: fullSnap || popupWithKeyboard || getIsFullScreen(context)
+              ? [0.95, 1.0]
+              : [0.6, 1.0],
+          builder: (context, scrollController) {
+            if (customBuilder != null) {
+              return Material(
+                child: Theme(
+                  data: Theme.of(themeContext ?? context),
+                  child: customBuilder(
+                      context, scrollController, 1.0),
+                ),
+              );
+            }
+            return Material(
+              child: Theme(
+                data: Theme.of(themeContext ?? context),
+                child: SingleChildScrollView(
+                  controller: scrollController,
+                  child: child,
+                ),
+              ),
+            );
+          },
         ),
-        customBuilder: customBuilder != null
-            ? (context, controller, state) {
-                if (checkIfDefaultThemeData(themeContext)) themeContext = null;
-
-                return Material(
-                  child: Theme(
-                    data: Theme.of(themeContext ?? context),
-                    child: Container(
-                      color: bottomPaddingColor,
-                      child: customBuilder(context, controller, state),
-                    ),
-                  ),
-                );
-              }
-            : null,
-        listener: (SheetState state) {
-          if (state.maxExtent == 1 &&
-              state.isExpanded &&
-              state.isAtTop &&
-              state.currentScrollOffset == 0 &&
-              state.progress == 1 &&
-              ScrollConfiguration.of(context)
-                      .getScrollPhysics(context)
-                      .toString() !=
-                  "BouncingScrollPhysics" &&
-              getPlatform() != PlatformOS.isIOS) {
-            HapticFeedback.heavyImpact();
-          }
-        },
-        color: bottomPaddingColor,
-        cornerRadius: getPlatform() == PlatformOS.isIOS ? 10 : 20,
-        duration: Duration(milliseconds: 300),
-        builder: customBuilder != null
-            ? null
-            : (context, state) {
-                if (checkIfDefaultThemeData(themeContext)) themeContext = null;
-
-                return Material(
-                  child: Theme(
-                    data: Theme.of(themeContext ?? context),
-                    child: SingleChildScrollView(
-                      child: child,
-                    ),
-                  ),
-                );
-              },
       );
     },
   );
@@ -245,44 +173,3 @@ bool checkIfDefaultThemeData(BuildContext? context) {
     return true;
   }
 }
-
-// openBottomSheetWithKeyboard(context, child,
-//     {bool maxHeight: true, bool handle: true}) {
-//   //minimize keyboard when open
-//   FocusScope.of(context).unfocus();
-//   showModalBottomSheet(
-//     shape: RoundedRectangleBorder(
-//       borderRadius: BorderRadiusDirectional.circular(16),
-//     ),
-//     isScrollControlled: true,
-//     isDismissible: false,
-//     context: context,
-//     backgroundColor: Colors.transparent,
-//     builder: (contextBuilder) {
-//       return Padding(
-//         padding: EdgeInsetsDirectional.only(top: MediaQuery.paddingOf(context).top),
-//         child: GestureDetector(
-//           onTap: () {
-//             popRoute(context);
-//           },
-//           child: Align(
-//             alignment: AlignmentDirectional.bottomCenter,
-//             child: Container(
-//               padding: EdgeInsetsDirectional.only(
-//                 bottom: MediaQuery.of(contextBuilder).viewInsets.bottom,
-//               ),
-//               decoration: BoxDecoration(
-//                 color: getColor(context, "lightDarkAccent"),
-//                 borderRadius: BorderRadiusDirectional.only(
-//                   topend: Radius.circular(20),
-//                   topstart: Radius.circular(20),
-//                 ),
-//               ),
-//               child: child,
-//             ),
-//           ),
-//         ),
-//       );
-//     },
-//   );
-// }

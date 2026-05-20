@@ -22,8 +22,8 @@ import 'package:budget/struct/databaseGlobal.dart';
 import 'package:budget/widgets/ghostTransactions.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
-import 'package:implicitly_animated_reorderable_list/implicitly_animated_reorderable_list.dart';
-import 'package:implicitly_animated_reorderable_list/transitions.dart';
+import 'package:budget/modified/implicitly_animated_compat.dart';
+// compat.SizeFadeTransition not needed - it's exported from the compat module
 import 'package:provider/provider.dart';
 import 'package:sliver_tools/sliver_tools.dart';
 import 'package:budget/struct/currencyFunctions.dart';
