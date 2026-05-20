@@ -1,20 +1,7 @@
 # Ledger
 
 <div align="center">
-  <a href="https://ledger-finance.web.app/">
-    <img alt="Ledger Logo" src="promotional/icons/icon.png" width="150px">
-  </a>
-</div>
-
-<br>
-
-<div align="center">
-  <a href="https://github.com/ningtoba/Ledger/releases/">
-    <img alt="GitHub Badge" src="promotional/store-banners/github-badge.png" height="60px">
-  </a>
-  <a href="https://ledger-finance.web.app/">
-    <img alt="PWA Badge" src="promotional/store-banners/pwa-badge.png" height="60px">
-  </a>
+  <img alt="Ledger Logo" src="budget/assets/icon/logo.png" width="150px">
 </div>
 
 ---
@@ -149,7 +136,6 @@ Ledger/
 ├── .github/                   # CI workflows, PR templates
 ├── promotional/               # Store assets, banners
 ├── ROADMAP.md                 # Project roadmap and milestones
-├── CONTRIBUTING.md            # Contribution guidelines
 └── scripts/                   # Build/deploy scripts
 ```
 
