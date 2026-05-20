@@ -30,7 +30,7 @@
 - [x] Update default accent color to deep teal (#0D4F4F)
 - [x] Rewrite README with Ledger brand identity
 - [x] Update color palette across the app
-- [ ] New app icon (replace cashew nut with ledger-themed icon)
+- [x] New app icon (replace cashew nut with ledger-themed icon)
 - [ ] Update splash screen (Android launch_background.xml, iOS LaunchScreen.storyboard)
 - [ ] Create store screenshots with new branding
 
@@ -104,11 +104,7 @@
 
 ---
 
-## How to Contribute
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed contribution guidelines.
-
-This roadmap is a living document. Milestones and priorities may shift based on community feedback and development progress.
+This roadmap is a living document. Milestones and priorities may shift based on development progress.
 
 ---
 
