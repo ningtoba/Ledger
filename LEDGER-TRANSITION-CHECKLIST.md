@@ -1,141 +1,178 @@
-# Cashew → Ledger Transition Checklist
+# Cashew → Ledger Full Transition Checklist
 
-An exhaustive checklist of every remaining Cashew reference and branding gap that needs to be fixed for a complete Ledger transition.
+Everything that needs to change to make this fork fully independent.  
+About ~69 items across 9 categories.
 
----
-
-## Priority Legend
-
-| Icon | Meaning |
-|------|---------|
-| 🔥🔥 | **CRITICAL** — will crash at build or runtime |
-| 🔥 | **MAJOR** — visible to users or affects functionality |
-| ⚡ | **MINOR** — code quality / internal consistency |
-| ℹ️ | **INFO** — intentional attribution, no action needed |
+**Instructions:** Tick boxes as you complete each item. Items marked with 🔥 are blocking — do those first.
 
 ---
 
-## 1. Android
+## 1. BRAND IDENTITY (App Name, Icons, Splash, Deep Links)
 
-- [ ] 🔥🔥 **`budget/android/app/src/main/AndroidManifest.xml:33`** — `android:label="Cashew"` → `"Ledger"` (app icon label on launcher)
-- [ ] 🔥🔥 **`budget/android/app/src/main/AndroidManifest.xml:52-53`** — `android:host="cashewapp.web.app"` → your Ledger domain (deep link verification)
-- [ ] 🔥 **`budget/android/app/build.gradle:44`** — `applicationId "com.budget.tracker_app"` → `"com.ledger.tracker"` (Play Store identity)
-- [ ] 🔥 **`budget/android/app/src/main/AndroidManifest.xml:2`** — `package="com.budget.tracker_app"` → must match build.gradle
-- [ ] 🔥 **`budget/android/app/src/debug/AndroidManifest.xml:2`** — same package
-- [ ] 🔥 **`budget/android/app/src/profile/AndroidManifest.xml:2`** — same package
-- [ ] ℹ️ **`budget/android/app/google-services.json`** — points to `budget-app-flutter` Firebase project. Either keep (if using that project) or regenerate for your own project.
-- [ ] ℹ️ **`budget/android/app/google-services-laptop-dev.json`** — same question
-- [ ] ℹ️ **`budget/android/app/google-services-old.json`** — same question
-- [ ] ⚡ **`budget/android/app/src/main/kotlin/`** — check Kotlin files for any app name references
+### App Display Names
+- [ ] 🔥 `budget/android/app/src/main/AndroidManifest.xml:33` — `android:label="Cashew"` → `"Ledger"`
+- [ ] 🔥 `budget/ios/Runner/Info.plist:12` — `"Cashew uses photos..."` → `"Ledger uses photos..."`
+- [ ] 🔥 `budget/ios/Runner/Info.plist:14` — `"Cashew uses the camera..."` → `"Ledger uses the camera..."`
+- [ ] 🔥 `budget/ios/Runner/Info.plist:22` — `CFBundleDisplayName = "Cashew"` → `"Ledger"`
+- [ ] 🔥 `budget/ios/Runner.xcodeproj/project.pbxproj` — 3x `INFOPLIST_KEY_CFBundleDisplayName = Cashew` → `Ledger`
+- [ ] `budget/ios/Runner/Info.plist:30` — `CFBundleName = "budget"` → `"Ledger"`
 
----
+### App Icons
+- [ ] `budget/android/app/src/main/res/mipmap-*/ic_launcher*.png` — Replace 20+ Android icon PNGs with Ledger design
+- [ ] `budget/ios/Runner/Assets.xcassets/AppIcon.appiconset/*.png` — Replace 21 iOS icon PNGs
+- [ ] `budget/web/icons/Icon-192.png`, `Icon-512.png` — Replace PWA icons
+- [ ] `budget/web/favicon.ico`, `budget/web/favicon.png` — Replace favicons
+- [ ] `budget/assets/icon/notification_icon_android.png`, `notification_icon_android2.png` — Replace notification icons
 
-## 2. iOS
+### Splash Screen
+- [ ] `budget/android/app/src/main/res/drawable/launch_background.xml` — Add Ledger logo or keep clean
+- [ ] `budget/ios/Runner/Base.lproj/LaunchScreen.storyboard` — Update LaunchImage with Ledger branding
 
-- [ ] 🔥🔥 **`budget/ios/Runner/Info.plist:12`** — `"Cashew uses photos..."` → `"Ledger uses photos..."` (photo library permission)
-- [ ] 🔥🔥 **`budget/ios/Runner/Info.plist:14`** — `"Cashew uses the camera..."` → `"Ledger uses the camera..."` (camera permission)
-- [ ] 🔥🔥 **`budget/ios/Runner/Info.plist:22`** — `CFBundleDisplayName = "Cashew"` → `"Ledger"` (iOS icon label)
-- [ ] 🔥🔥 **`budget/ios/Runner/Runner.entitlements:9`** — `applinks:cashewapp.web.app` → your Ledger domain (universal links verification)
-- [ ] 🔥 **`budget/ios/Runner/Info.plist:30`** — `CFBundleName = "budget"` → `"Ledger"`
-- [ ] 🔥 **`budget/ios/Runner.xcodeproj/project.pbxproj:504,692,722`** — `PRODUCT_BUNDLE_IDENTIFIER = "com.budget.tracker-app"` → your new bundle ID
-- [ ] ℹ️ **GoogleService-Info.plist** — if it exists, check Firebase project reference
-
----
-
-## 3. Firebase & Backend
-
-- [ ] 🔥🔥 **`budget/lib/firebase_options.dart`** — all 4 platform configs point to `budget-app-flutter`. Decide: keep old Firebase project or create new one
-- [ ] 🔥🔥 **`budget/web/index.html:81-83`** — `authDomain`, `projectId`, `storageBucket` all say `budget-app-flutter` — same decision
-- [ ] 🔥🔥 **`budget/.firebaserc:3`** — `"default": "budget-app-flutter"` → your Firebase project
-- [ ] 🔥 **`.github/workflows/firebase-hosting-pull-request.yml:24-25`** — `projectId: budget-app-flutter`, `secrets.FIREBASE_SERVICE_ACCOUNT_BUDGET_APP_FLUTTER`
-- [ ] 🔥 **`budget/android/app/google-services.json`** — `project_id: "budget-app-flutter"`, `package_name: "com.budget.tracker_app"`
-- [ ] 🔥 **`budget/android/app/google-services-laptop-dev.json`** — same
-- [ ] ℹ️ **`budget/android/app/google-services-old.json`** — stale backup, can delete
+### Deep Links / Universal Links
+- [ ] 🔥 `budget/android/app/src/main/AndroidManifest.xml:52-53` — `android:host="cashewapp.web.app"` → your domain
+- [ ] 🔥 `budget/ios/Runner/Runner.entitlements:9` — `applinks:cashewapp.web.app` → your domain
+- [ ] `budget/lib/widgets/util/appLinks.dart:388` — Comment referencing old domain (clean up)
 
 ---
 
-## 4. In-App Purchase Product IDs
+## 2. DEVELOPER IDENTITY (Package Name, Bundle ID, Author Info)
 
-> **Decision needed:** Are you shipping under a new app store entry or inheriting the Cashew listing?
+### Package Name / Bundle ID
+- [ ] 🔥 `budget/android/app/build.gradle:44` — `applicationId "com.budget.tracker_app"` → your ID (e.g. `com.ningtoba.ledger`)
+- [ ] 🔥 `budget/android/app/src/main/AndroidManifest.xml:2` — `package="com.budget.tracker_app"` → match build.gradle
+- [ ] 🔥 `budget/android/app/src/debug/AndroidManifest.xml:2` — same
+- [ ] 🔥 `budget/android/app/src/profile/AndroidManifest.xml:2` — same
+- [ ] 🔥 `budget/ios/Runner.xcodeproj/project.pbxproj` — 3x `PRODUCT_BUNDLE_IDENTIFIER = "com.budget.tracker-app"` → your ID
+- [ ] 🔥 `budget/ios/Runner.xcodeproj/project.pbxproj` — test target bundle IDs (lines ~522, 540, 556)
+- [ ] 🔥 `budget/android/app/src/main/kotlin/.../*.kt` — 5 Kotlin files: `package com.budget.tracker_app` → new package (and move files to new directory)
+- [ ] `budget/lib/firebase_options.dart:74` — `iosBundleId: 'com.budget.tracker-app'` → new ID
 
-- [ ] 🔥 **`budget/lib/pages/premiumPage.dart:35-42`** — `cashew.pro.yearly`, `cashew.pro.monthly`, `cashew.pro.life`, `cashew.pro.lifetime` — if publishing fresh, register new IAP products
-- [ ] 🔥 **`budget/lib/pages/premiumPage.dart:486,489`** — `sku=cashew.pro.monthly` in Google Play subscription management URLs
+### Apple Developer
+- [ ] `budget/ios/Runner.xcodeproj/project.pbxproj` — Replace `DEVELOPMENT_TEAM = HCL9V2D3XY` with YOUR team ID
 
----
-
-## 5. Exported File Names
-
-- [ ] 🥇 **`budget/lib/widgets/exportDB.dart:42`** — `"cashew-" + filename` → `"ledger-"`
-- [ ] 🥇 **`budget/lib/widgets/exportCSV.dart:155,172`** — `"cashew-" + filename` → `"ledger-"`
-- [ ] 🥇 **`budget/lib/widgets/accountAndBackup.dart:1518`** — `"cashew-" + backup name` → `"ledger-"`
-- [ ] 🥇 **`budget/lib/widgets/importCSV.dart:834`** — `"cashew-import-template"` → `"ledger-import-template"`
-
----
-
-## 6. External URLs (Pointing to Cashew Domains)
-
-> These all point to `cashewapp.web.app` (the upstream developer's site). Replace with your own hosted pages if you have them, or remove the links.
-
-- [ ] 🔥 **`budget/lib/pages/aboutPage.dart:866`** — `https://cashewapp.web.app/faq.html`
-- [ ] 🔥 **`budget/lib/pages/aboutPage.dart:907`** — `https://cashewapp.web.app/policy.html`
-- [ ] 🔥 **`budget/lib/pages/accountsPage.dart:354`** — `https://cashewapp.web.app/policy.html`
-- [ ] 🔥 **`budget/lib/pages/settingsPage.dart:110`** — `https://cashewapp.web.app/faq.html`
-- [ ] 🔥 **`budget/lib/pages/premiumPage.dart:712`** — `https://cashewapp.web.app/faq.html#restoring-purchases`
-- [ ] 🔥 **`budget/lib/widgets/importCSV.dart:245`** — `https://cashewapp.web.app/faq.html#import-csv-data`
-- [ ] 🔥 **`budget/lib/widgets/ratingPopup.dart:127`** — `https://cashewapp.web.app/faq.html`
-- [ ] 🔥 **`budget/lib/widgets/util/appLinks.dart:388`** — commented-out `cashewapp.web.app` reference
-- [ ] 🔥 **`budget/web/index.html:43-52`** — all 4 OG/Twitter meta tags point to `https://cashewapp.web.app/assets/preview.png`
+### Author Info
+- [ ] `budget/lib/pages/aboutPage.dart:135-148` — "James" (lead dev) → your name
+- [ ] `budget/lib/pages/aboutPage.dart:116,119,144` — `dapperappdeveloper@gmail.com` → your email
+- [ ] `budget/lib/pages/premiumPage.dart:708-709` — `dapperappdeveloper@gmail.com` → your email
+- [ ] `budget/lib/struct/settings.dart:351,354,391` — `dapperappdeveloper@gmail.com` → your email
+- [ ] `budget/lib/pages/aboutPage.dart:193` — `"made-in-canada"` → update or keep
+- [ ] `budget/lib/pages/premiumPage.dart:1426` — `ko-fi.com/dapperappdeveloper` → your support link
+- [ ] `README.md:164` — `dapperappdeveloper@gmail.com` → your email
 
 ---
 
-## 7. Social/Web Meta
+## 3. FIREBASE & INFRASTRUCTURE
 
-- [ ] 🔥 **`budget/web/index.html:43-52`** — og:url, og:image, twitter:url, twitter:image point to `cashewapp.web.app/assets/preview.png` — replace with your own hosted preview image
+### Firebase Project Setup
+- [ ] 🔥 **Create your own Firebase project** (everything below depends on this)
+- [ ] 🔥 `budget/lib/firebase_options.dart` — Regenerate with `flutterfire configure` using YOUR project
+- [ ] 🔥 `budget/web/index.html:80-86` — Replace `budget-app-flutter` Firebase config with yours
+- [ ] 🔥 `budget/android/app/google-services.json` — Replace with YOUR Firebase project's file
+- [ ] 🔥 `budget/.firebaserc:3` — `"default": "budget-app-flutter"` → your project ID
+- [ ] `budget/firebase.json:8` — `"site":"budget-track"` → your site or keep
+- [ ] Delete `budget/android/app/google-services-old.json` (stale)
+- [ ] Delete or replace `budget/android/app/google-services-laptop-dev.json`
 
----
-
-## 8. Translations (User-Facing Strings)
-
-- [ ] 🔥 **`budget/assets/translations/generated/no.json:475`** — `"Takk for at du støtter cashew!"` → `"Ledger"`
-- [ ] 🔥 **`budget/assets/translations/generated/sv.json:475`** — `"Tack för att du stöder cashew!"` → `"Ledger"`
-- [ ] ⚡ **All translation files** — key `"enjoying-cashew-question"` — functional but the key name still says "cashew". Consider renaming.
-
----
-
-## 9. Code Cleanup
-
-- [ ] ⚡ **`budget/lib/pages/aboutPage.dart:46,546,591`** — variable name `cashewInformation` → consider renaming
-- [ ] ⚡ **`budget/lib/pages/settingsPage.dart:185`** — comment `// openUrl("https://github.com/jameskokoska/Cashew");`
-- [ ] ⚡ **`budget/lib/widgets/util/appLinks.dart:388`** — comment `// if (request.url.startsWith('https://cashewapp.web.app/'))`
-- [ ] ⚡ **`budget/pubspec.yaml:1`** — `name: budget` — consider renaming to `ledger`
+### CI/CD
+- [ ] `.github/workflows/firebase-hosting-pull-request.yml:24-25` — Update `projectId` and `firebaseServiceAccount` secret name for your Firebase project
+- [ ] Set up GitHub secret `FIREBASE_SERVICE_ACCOUNT_LEDGER` (or whatever you name it)
 
 ---
 
-## 10. Documentation
+## 4. IN-APP PURCHASES
 
-- [ ] ✅ **`README.md`** — Cashew attribution preserved (intentional) ✓
-- [ ] 📝 **`ROADMAP.md`** — update progress as items get checked off
-- [ ] ℹ️ **`budget/lib/widgets/showChangelog.dart`** — contains historical "Cashew" changelog entries from upstream — these are intentional records
-
----
-
-## 11. Splash Screen
-
-- [ ] 📝 **Android `launch_background.xml`** — currently default Flutter splash, no Cashew branding (verified clean)
-- [ ] 📝 **iOS `LaunchScreen.storyboard`** — currently default Flutter splash (verified clean)
-- [ ] 📝 If you want a branded splash screen, create one with the Ledger logo + deep teal background
+- [ ] 🔥 `budget/lib/pages/premiumPage.dart:34-42` — Replace `cashew.pro.yearly`, `cashew.pro.monthly`, `cashew.pro.life`, `cashew.pro.lifetime` with YOUR product IDs
+- [ ] 🔥 `budget/lib/pages/premiumPage.dart:486,489` — Update subscription management URLs with new SKU and package name
 
 ---
 
-## Quick Summary by Severity
+## 5. USER-FACING CONTENT
 
-| Severity | Count | Action |
-|----------|-------|--------|
-| 🔥🔥 **Critical** | 12 | Must fix before any build/release |
-| 🔥 **Major** |  venti | Should fix before public release |
-| ⚡ **Minor** | 5 | Nice to have |
-| ℹ️ **Info** | 5 | Requires decision (firebase, IAP, bundle ID) |
+### Exported File Names
+- [ ] `budget/lib/widgets/exportDB.dart:42` — `"cashew-"` → `"ledger-"`
+- [ ] `budget/lib/widgets/exportCSV.dart:155,172` — `"cashew-"` → `"ledger-"`
+- [ ] `budget/lib/widgets/importCSV.dart:834` — `"cashew-import-template"` → `"ledger-import-template"`
+- [ ] `budget/lib/widgets/accountAndBackup.dart:1518` — `"cashew-"` → `"ledger-"`
+
+### External URLs (Cashew Domains)
+- [ ] `budget/lib/pages/aboutPage.dart:866` — `cashewapp.web.app/faq.html` → your URL
+- [ ] `budget/lib/pages/aboutPage.dart:907` — `cashewapp.web.app/policy.html` → your URL
+- [ ] `budget/lib/pages/accountsPage.dart:354` — `cashewapp.web.app/policy.html` → your URL
+- [ ] `budget/lib/pages/settingsPage.dart:110` — `cashewapp.web.app/faq.html` → your URL
+- [ ] `budget/lib/pages/premiumPage.dart:712` — `cashewapp.web.app/faq.html#restoring-purchases` → your URL
+- [ ] `budget/lib/widgets/importCSV.dart:245` — `cashewapp.web.app/faq.html#import-csv-data` → your URL
+- [ ] `budget/lib/widgets/ratingPopup.dart:127` — `cashewapp.web.app/faq.html` → your URL
+- [ ] `budget/web/index.html:43-52` — 4x OG/Twitter meta tags pointing to `cashewapp.web.app/assets/preview.png` → your hosted preview
+
+### Translations
+- [ ] `budget/assets/translations/generated/no.json:475` — `"støtter cashew"` → `"støtter Ledger"`
+- [ ] `budget/assets/translations/generated/sv.json:475` — `"stöder cashew"` → `"stöder Ledger"`
+- [ ] Consider renaming translation key `"enjoying-cashew-question"` across all 30+ files
+
+### Changelog
+- [ ] `budget/lib/widgets/showChangelog.dart` — 6 historical entries reference "Cashew Pro" and "App rename to Cashew" — edit or leave as history
 
 ---
 
-*Generated by automated repo scan. Last updated: 2026-05-20*
+## 6. BUILD SYSTEM
+
+- [ ] `budget/android/app/build.gradle:67-73` — Create YOUR OWN release keystore and `key.properties`
+- [ ] `scripts/deploy_and_build_windows.bat` — Review for old references
+- [ ] `scripts/open_release_builds.bat` — Review for old references
+- [ ] `scripts/update_translations.bat` — Review for old references
+- [ ] `budget/pubspec.yaml:75` — `reorderable_grid_view` points to `jameskokoska/reorderable_grid_view` — fork to your account
+
+---
+
+## 7. CODE CLEANUP
+
+- [ ] `budget/lib/pages/aboutPage.dart:46,546,591` — Variable name `cashewInformation` → rename
+- [ ] `budget/lib/pages/settingsPage.dart:185` — Commented-out GitHub link — clean up
+- [ ] `budget/lib/widgets/util/appLinks.dart:388` — Commented-out Cashew domain — clean up
+- [ ] `budget/android/app/src/main/AndroidManifest.xml:125-141` — Commented-out notification service XML — clean up
+- [ ] `budget/pubspec.yaml:1` — `name: budget` → consider `ledger` (internal package name)
+
+---
+
+## 8. GOOGLE SIGN-IN CLIENT IDS
+
+- [ ] `budget/ios/Runner/Info.plist:69` — Replace `com.googleusercontent.apps.267621253497-...` with YOUR client ID
+- [ ] `budget/lib/firebase_options.dart:72-73` — Replace `androidClientId` and `iosClientId` (auto-done by `flutterfire configure`)
+- [ ] `budget/web/index.html:21` — Replace `google-signin-client_id` with YOUR web client ID
+
+---
+
+## 9. DEPENDENCY FORK
+
+- [ ] Fork `jameskokoska/reorderable_grid_view` to your GitHub
+- [ ] `budget/pubspec.yaml:75` — Update URL to your fork
+
+---
+
+## Quick Summary
+
+| Priority | Count | What |
+|----------|-------|------|
+| 🔥 Must fix before build | ~15 | App names, bundle IDs, Firebase project |
+| Should fix before release | ~20 | URLs, emails, icons, splash |
+| Nice to have | ~15 | Comments, variable names, changelog |
+| Delete/clean up | ~5 | Stale google-services files, dead comments |
+
+---
+
+## Critical Path (Recommended Order)
+
+1. **Create your Firebase project** → regenerate firebase_options.dart + google-services.json
+2. **Change package name / bundle ID** → Android manifests, build.gradle, iOS pbxproj, Kotlin files
+3. **Update app display names** → AndroidManifest label, iOS Info.plist + pbxproj
+4. **Replace app icons** → Android mipmaps, iOS AppIcon assets, web favicons
+5. **Replace all external URLs** → FAQ, policy, social meta tags
+6. **Update author info** → about page, email addresses, Ko-fi link
+7. **Update exported file names** → DB, CSV, backup, import template
+8. **Create new IAP products** → replace `cashew.pro.*` with your product IDs
+9. **Clean up stale files** → old google-services JSONs, dead comments
+10. **Update CI/CD** → Firebase service account, project ID
+
+---
+
+*Generated 2026-05-20 by automated full-repo scan.*
