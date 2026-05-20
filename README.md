@@ -131,7 +131,6 @@ Ledger/
 │   ├── packages/              # Bundled packages
 │   └── test/                  # Unit & widget tests
 ├── .github/                   # CI workflows, PR templates
-├── promotional/               # Store assets, banners
 ├── ROADMAP.md                 # Project roadmap and milestones
 └── scripts/                   # Build/deploy scripts
 ```
