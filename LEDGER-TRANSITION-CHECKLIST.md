@@ -95,10 +95,10 @@ About ~69 items across 9 categories.
 ## 5. USER-FACING CONTENT
 
 ### Exported File Names
-- [ ] `budget/lib/widgets/exportDB.dart:42` — `"cashew-"` → `"ledger-"`
-- [ ] `budget/lib/widgets/exportCSV.dart:155,172` — `"cashew-"` → `"ledger-"`
-- [ ] `budget/lib/widgets/importCSV.dart:834` — `"cashew-import-template"` → `"ledger-import-template"`
-- [ ] `budget/lib/widgets/accountAndBackup.dart:1518` — `"cashew-"` → `"ledger-"`
+- [x] `budget/lib/widgets/exportDB.dart:42` — `"cashew-"` → `"ledger-"`
+- [x] `budget/lib/widgets/exportCSV.dart:155,172` — `"cashew-"` → `"ledger-"`
+- [x] `budget/lib/widgets/importCSV.dart:834` — `"cashew-import-template"` → `"ledger-import-template"`
+- [x] `budget/lib/widgets/accountAndBackup.dart:1518` — `"cashew-"` → `"ledger-"`
 
 ### External URLs (Cashew Domains)
 - [ ] `budget/lib/pages/aboutPage.dart:866` — `cashewapp.web.app/faq.html` → your URL
