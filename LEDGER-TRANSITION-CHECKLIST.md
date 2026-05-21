@@ -90,8 +90,8 @@ About ~69 items across 9 categories.
 - [x] Delete `budget/android/app/google-services-laptop-dev.json` — done
 
 ### CI/CD
-- [ ] `.github/workflows/firebase-hosting-pull-request.yml:24-25` — Update `projectId` and `firebaseServiceAccount` secret name for your Firebase project
-- [ ] Set up GitHub secret `FIREBASE_SERVICE_ACCOUNT_LEDGER` (or whatever you name it)
+- [x] `.github/workflows/firebase-hosting-pull-request.yml:24-25` — Updated `projectId` to `ledger-626f4` and `firebaseServiceAccount` secret to `FIREBASE_SERVICE_ACCOUNT_LEDGER`
+- [x] Set up GitHub secret `FIREBASE_SERVICE_ACCOUNT_LEDGER`
 
 ---
 
