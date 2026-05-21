@@ -17,21 +17,37 @@ About ~69 items across 9 categories.
 - [x] 🔥 `budget/ios/Runner.xcodeproj/project.pbxproj` — 3x `INFOPLIST_KEY_CFBundleDisplayName = Cashew` → `Ledger`
 - [x] `budget/ios/Runner/Info.plist:30` — `CFBundleName = "budget"` → `"Ledger"`
 
-### App Icons
-- [ ] `budget/android/app/src/main/res/mipmap-*/ic_launcher*.png` — Replace 20+ Android icon PNGs with Ledger design
-- [ ] `budget/ios/Runner/Assets.xcassets/AppIcon.appiconset/*.png` — Replace 21 iOS icon PNGs
-- [ ] `budget/web/icons/Icon-192.png`, `Icon-512.png` — Replace PWA icons
-- [ ] `budget/web/favicon.ico`, `budget/web/favicon.png` — Replace favicons
-- [ ] `budget/assets/icon/notification_icon_android.png`, `notification_icon_android2.png` — Replace notification icons
+### App Icons (Android: 20 PNGs, iOS: 21 PNGs, Web: 4 files, Notification: 3 PNGs)
+- [ ] **Source assets** — Replace `budget/assets/icon/logo.png` and `budget/assets/icon/icon-web.png` with new Ledger icon design before running `flutter pub run flutter_launcher_icons:main`
+- [ ] **Android mipmaps** (auto-generated from logo.png via flutter_launcher_icons):
+  - `budget/android/app/src/main/res/mipmap-mdpi/ic_launcher*.png` (4 files: png, foreground, background, monochrome)
+  - `budget/android/app/src/main/res/mipmap-hdpi/ic_launcher*.png` (4 files)
+  - `budget/android/app/src/main/res/mipmap-xhdpi/ic_launcher*.png` (4 files)
+  - `budget/android/app/src/main/res/mipmap-xxhdpi/ic_launcher*.png` (4 files)
+  - `budget/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher*.png` (4 files)
+  - `budget/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml` (adaptive icon config)
+- [ ] **Android notification icons**:
+  - `budget/assets/icon/notification_icon_android.png`
+  - `budget/assets/icon/notification_icon_android2.png`
+  - `budget/android/app/src/main/res/drawable/notification_icon_android2.png`
+- [ ] **iOS AppIcon assets** (auto-generated from logo.png):
+  - `budget/ios/Runner/Assets.xcassets/AppIcon.appiconset/*.png` (21 PNGs at various sizes)
+- [ ] **Web PWA icons**:
+  - `budget/web/icons/Icon-192.png`
+  - `budget/web/icons/Icon.png`
+  - `budget/web/icons/Icon-512.png`
+  - `budget/web/favicon.ico`
+  - `budget/web/favicon.png`
 
 ### Splash Screen
-- [ ] `budget/android/app/src/main/res/drawable/launch_background.xml` — Add Ledger logo or keep clean
-- [ ] `budget/ios/Runner/Base.lproj/LaunchScreen.storyboard` — Update LaunchImage with Ledger branding
+- [ ] `budget/android/app/src/main/res/drawable/launch_background.xml` — Currently just white background. Add Ledger logo (uncomment mipmap/launch_image reference)
+- [ ] `budget/android/app/src/main/res/values/styles.xml` — Review LaunchTheme / NormalTheme colors
+- [ ] `budget/ios/Runner/Base.lproj/LaunchScreen.storyboard` — Update LaunchScreen with Ledger branding (edit via Xcode)
 
 ### Deep Links / Universal Links
 - [x] 🔥 `budget/android/app/src/main/AndroidManifest.xml:52-53` — `android:host="cashewapp.web.app"` → `ledger-626f4.web.app`
 - [x] 🔥 `budget/ios/Runner/Runner.entitlements:9` — `applinks:cashewapp.web.app` → `ledger-626f4.web.app`
-- [ ] `budget/lib/widgets/util/appLinks.dart:388` — Comment referencing old domain (clean up)
+- [x] `budget/lib/widgets/util/appLinks.dart:388` — Comment referencing old domain (clean up)
 
 ---
 
