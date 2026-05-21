@@ -68,10 +68,10 @@ About ~69 items across 9 categories.
 - [x] 🔥 `budget/lib/firebase_options.dart` — Regenerated with `flutterfire configure`
 - [x] 🔥 `budget/android/app/google-services.json` — Regenerated with `flutterfire configure`
 - [x] 🔥 `budget/.firebaserc` — Updated to `ledger-626f4`
-- [ ] `budget/web/index.html:80-86` — Replace `budget-app-flutter` Firebase config with yours
-- [ ] `budget/firebase.json:8` — `"site":"budget-track"` → your site or keep
-- [ ] Delete `budget/android/app/google-services-old.json` (stale)
-- [ ] Delete or replace `budget/android/app/google-services-laptop-dev.json`
+- [x] `budget/web/index.html:80-86` — Firebase config updated to `ledger-626f4` (apiKey needs real value from Firebase console)
+- [x] `budget/firebase.json:8` — `"site":"budget-track"` → `"ledger-626f4"`
+- [x] Delete `budget/android/app/google-services-old.json` (stale) — done
+- [x] Delete `budget/android/app/google-services-laptop-dev.json` — done
 
 ### CI/CD
 - [ ] `.github/workflows/firebase-hosting-pull-request.yml:24-25` — Update `projectId` and `firebaseServiceAccount` secret name for your Firebase project
