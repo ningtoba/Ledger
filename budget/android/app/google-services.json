@@ -7,43 +7,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:938370323736:android:2fa7bce41b9bd9b37a7a6d",
-        "android_client_info": {
-          "package_name": "com.budget.tracker_app"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "938370323736-p8c475ofq4k22va9eg7rq2lch8juil0e.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCRdYGvQPt6z2RMrTiT07IrokS9SE4s4UY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "938370323736-p8c475ofq4k22va9eg7rq2lch8juil0e.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "938370323736-r3mgkkuj6c1o2c5oe435duf5n96qka1l.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.budget.budget.RunnerTests"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:938370323736:android:066e3acd460e98157a7a6d",
+        "mobilesdk_app_id": "1:938370323736:android:c48e475960be0d087a7a6d",
         "android_client_info": {
           "package_name": "com.ningtoba.ledger"
         }
@@ -67,10 +31,10 @@
               "client_type": 3
             },
             {
-              "client_id": "938370323736-r3mgkkuj6c1o2c5oe435duf5n96qka1l.apps.googleusercontent.com",
+              "client_id": "938370323736-5ad281gd9kdpfluj27a22kvvjd7mogm4.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.budget.budget.RunnerTests"
+                "bundle_id": "com.ningtoba.ledger.RunnerTests"
               }
             }
           ]

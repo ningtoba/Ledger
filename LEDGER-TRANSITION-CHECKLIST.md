@@ -64,11 +64,11 @@ About ~69 items across 9 categories.
 ## 3. FIREBASE & INFRASTRUCTURE
 
 ### Firebase Project Setup
-- [ ] 🔥 **Create your own Firebase project** (everything below depends on this)
-- [ ] 🔥 `budget/lib/firebase_options.dart` — Regenerate with `flutterfire configure` using YOUR project
-- [ ] 🔥 `budget/web/index.html:80-86` — Replace `budget-app-flutter` Firebase config with yours
-- [ ] 🔥 `budget/android/app/google-services.json` — Replace with YOUR Firebase project's file
-- [ ] 🔥 `budget/.firebaserc:3` — `"default": "budget-app-flutter"` → your project ID
+- [x] 🔥 **Create your own Firebase project** (everything below depends on this)
+- [x] 🔥 `budget/lib/firebase_options.dart` — Regenerated with `flutterfire configure`
+- [x] 🔥 `budget/android/app/google-services.json` — Regenerated with `flutterfire configure`
+- [x] 🔥 `budget/.firebaserc` — Updated to `ledger-626f4`
+- [ ] `budget/web/index.html:80-86` — Replace `budget-app-flutter` Firebase config with yours
 - [ ] `budget/firebase.json:8` — `"site":"budget-track"` → your site or keep
 - [ ] Delete `budget/android/app/google-services-old.json` (stale)
 - [ ] Delete or replace `budget/android/app/google-services-laptop-dev.json`

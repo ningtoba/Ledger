@@ -48,17 +48,17 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyBjwHFH57_8GkFYwVBm0oeijRrCHhnS6Us',
-    appId: '1:938370323736:web:38a07df4f135a9557a7a6d',
+    appId: '1:938370323736:web:802663cc6cc763627a7a6d',
     messagingSenderId: '938370323736',
     projectId: 'ledger-626f4',
     authDomain: 'ledger-626f4.firebaseapp.com',
     storageBucket: 'ledger-626f4.firebasestorage.app',
-    measurementId: 'G-ZRP3ZRTSZN',
+    measurementId: 'G-7N5M7H3VLP',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCRdYGvQPt6z2RMrTiT07IrokS9SE4s4UY',
-    appId: '1:938370323736:android:066e3acd460e98157a7a6d',
+    appId: '1:938370323736:android:c48e475960be0d087a7a6d',
     messagingSenderId: '938370323736',
     projectId: 'ledger-626f4',
     storageBucket: 'ledger-626f4.firebasestorage.app',
@@ -66,7 +66,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAbVcMnQ_0Z3iYc17fvWE60FhmvpjYELtQ',
-    appId: '1:938370323736:ios:494613ec959aff707a7a6d',
+    appId: '1:938370323736:ios:8a0805155418ec0f7a7a6d',
     messagingSenderId: '938370323736',
     projectId: 'ledger-626f4',
     storageBucket: 'ledger-626f4.firebasestorage.app',
