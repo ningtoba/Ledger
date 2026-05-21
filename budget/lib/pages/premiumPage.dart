@@ -705,8 +705,8 @@ showHelpRestorePopup(BuildContext context) {
     onCancelLabel: "close".tr(),
     onSubmitLabel: "contact".tr(),
     onSubmit: () async {
-      bool openResult = await openUrl('mailto:dapperappdeveloper@gmail.com');
-      if (openResult == false) copyToClipboard("dapperappdeveloper@gmail.com");
+      bool openResult = await openUrl('mailto:luqmanhakim.dev@gmail.com');
+      if (openResult == false) copyToClipboard("luqmanhakim.dev@gmail.com");
     },
     onExtra: () =>
         openUrl("https://cashewapp.web.app/faq.html#restoring-purchases"),
@@ -1402,140 +1402,6 @@ class PremiumBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (kIsWeb) return SizedBox.shrink();
-    double borderRadius = 15;
-    bool purchased = appStateSettings["purchaseID"] != null;
-
-    return Container(
-      decoration: BoxDecoration(
-          boxShadow: boxShadowSharp(context),
-          borderRadius: BorderRadiusDirectional.circular(borderRadius)),
-      margin: const EdgeInsetsDirectional.symmetric(horizontal: 9, vertical: 0),
-      child: OpenContainerNavigation(
-        borderRadius: borderRadius,
-        openPage: PremiumPage(canDismiss: true, popRouteWithPurchase: false),
-        closedColor: Theme.of(context).brightness == Brightness.light
-            ? Theme.of(context).colorScheme.secondaryContainer
-            : Theme.of(context).colorScheme.secondary,
-        button: (openContainer) {
-          return Tappable(
-            color: Colors.transparent,
-            borderRadius: borderRadius,
-            onTap: () {
-              if (kIsWeb)
-                openUrl("https://ko-fi.com/dapperappdeveloper");
-              else
-                openContainer();
-            },
-            child: ClipRRect(
-              borderRadius: BorderRadiusDirectional.circular(15),
-              child: IntrinsicHeight(
-                child: Stack(
-                  children: [
-                    Opacity(
-                      opacity: Theme.of(context).brightness == Brightness.light
-                          ? 0.7
-                          : 0.9,
-                      child: PremiumBackground(
-                        purchased: purchased,
-                        disableAnimation: appStateSettings["appAnimations"] !=
-                                AppAnimations.all.index ||
-                            getPlatform() == PlatformOS.isIOS ||
-                            kIsWeb ||
-                            appStateSettings["batterySaver"] == true,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsetsDirectional.only(
-                          start: 25, end: 17, top: 17, bottom: 17),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Flexible(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    LedgerProBanner(),
-                                    purchased
-                                        ? Container(
-                                            margin:
-                                                EdgeInsetsDirectional.symmetric(
-                                                    horizontal: 5),
-                                            padding:
-                                                EdgeInsetsDirectional.symmetric(
-                                                    horizontal: 12,
-                                                    vertical: 5),
-                                            decoration: BoxDecoration(
-                                              color: Theme.of(context)
-                                                  .colorScheme
-                                                  .secondaryContainer,
-                                              borderRadius:
-                                                  BorderRadiusDirectional
-                                                      .circular(100),
-                                              boxShadow:
-                                                  boxShadowGeneral(context),
-                                            ),
-                                            child: TextFont(
-                                              text: appStateSettings[
-                                                          "purchaseID"] ==
-                                                      productIDs["lifetime"]
-                                                  ? "lifetime".tr()
-                                                  : "active".tr(),
-                                              textColor: Theme.of(context)
-                                                  .colorScheme
-                                                  .onSecondaryContainer
-                                                  .withOpacity(0.8),
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 15,
-                                            ),
-                                          )
-                                        : SizedBox.shrink(),
-                                  ],
-                                ),
-                                purchased
-                                    ? SizedBox.shrink()
-                                    : Row(
-                                        children: [
-                                          Flexible(
-                                            child: TextFont(
-                                              text: "budget-like-a-pro".tr() +
-                                                  " " +
-                                                  globalAppName +
-                                                  " " +
-                                                  "Pro",
-                                              fontSize: 15,
-                                              maxLines: 3,
-                                              textColor: Colors.black,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                              ],
-                            ),
-                          ),
-                          appStateSettings["purchaseID"] != null
-                              ? SizedBox.shrink()
-                              : Icon(
-                                  appStateSettings["outlinedIcons"]
-                                      ? Icons.arrow_forward_ios_outlined
-                                      : Icons.arrow_forward_ios_rounded,
-                                  color: Colors.black,
-                                  size: 20,
-                                )
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          );
-        },
-      ),
-    );
+    return SizedBox.shrink();
   }
 }

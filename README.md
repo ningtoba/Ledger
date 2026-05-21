@@ -157,7 +157,7 @@ Translations are available as CSV-generated JSON files under `assets/translation
 python3 budget/assets/translations/generate-translations.py
 ```
 
-The master translations spreadsheet is available [here](https://docs.google.com/spreadsheets/d/1QQqt28cmrby6JqxLm-oxUXCuM3alniLJ6IRhcPJDOtk/edit?usp=sharing). If you would like to help translate, please reach out via email: dapperappdeveloper@gmail.com.
+The master translations spreadsheet is available [here](https://docs.google.com/spreadsheets/d/1QQqt28cmrby6JqxLm-oxUXCuM3alniLJ6IRhcPJDOtk/edit?usp=sharing). If you would like to help translate, please reach out via email: luqmanhakim.dev@gmail.com.
 
 ---
 

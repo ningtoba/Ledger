@@ -113,10 +113,10 @@ class AboutPageState extends State<AboutPage> {
             const EdgeInsetsDirectional.symmetric(horizontal: 15, vertical: 5),
         child: Tappable(
           onTap: () {
-            openUrl('mailto:dapperappdeveloper@gmail.com');
+            openUrl('mailto:luqmanhakim.dev@gmail.com');
           },
           onLongPress: () {
-            copyToClipboard("dapperappdeveloper@gmail.com");
+            copyToClipboard("luqmanhakim.dev@gmail.com");
           },
           color: containerColor,
           borderRadius: getPlatform() == PlatformOS.isIOS ? 10 : 15,
@@ -133,7 +133,7 @@ class AboutPageState extends State<AboutPage> {
                   maxLines: 5,
                 ),
                 TextFont(
-                  text: "James",
+                  text: "Luqman",
                   fontSize: 29,
                   fontWeight: FontWeight.bold,
                   textColor: Theme.of(context).colorScheme.onPrimaryContainer,
@@ -141,7 +141,7 @@ class AboutPageState extends State<AboutPage> {
                   maxLines: 5,
                 ),
                 TextFont(
-                  text: "dapperappdeveloper@gmail.com",
+                  text: "luqmanhakim.dev@gmail.com",
                   fontSize: 16,
                   textAlign: TextAlign.center,
                   maxLines: 5,
@@ -190,7 +190,7 @@ class AboutPageState extends State<AboutPage> {
             const EdgeInsetsDirectional.symmetric(horizontal: 15, vertical: 7),
         child: Center(
           child: TextFont(
-            text: "made-in-canada".tr() + " " + "🍁",
+            text: "vibe-in-malaysia".tr(),
             fontSize: 14,
             textAlign: TextAlign.center,
             maxLines: 5,

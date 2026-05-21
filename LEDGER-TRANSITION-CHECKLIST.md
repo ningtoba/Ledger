@@ -51,13 +51,13 @@ About ~69 items across 9 categories.
 - [ ] `budget/ios/Runner.xcodeproj/project.pbxproj` — Replace `DEVELOPMENT_TEAM = HCL9V2D3XY` with YOUR team ID
 
 ### Author Info
-- [ ] `budget/lib/pages/aboutPage.dart:135-148` — "James" (lead dev) → your name
-- [ ] `budget/lib/pages/aboutPage.dart:116,119,144` — `dapperappdeveloper@gmail.com` → your email
-- [ ] `budget/lib/pages/premiumPage.dart:708-709` — `dapperappdeveloper@gmail.com` → your email
-- [ ] `budget/lib/struct/settings.dart:351,354,391` — `dapperappdeveloper@gmail.com` → your email
-- [ ] `budget/lib/pages/aboutPage.dart:193` — `"made-in-canada"` → update or keep
-- [ ] `budget/lib/pages/premiumPage.dart:1426` — `ko-fi.com/dapperappdeveloper` → your support link
-- [ ] `README.md:164` — `dapperappdeveloper@gmail.com` → your email
+- [x] `budget/lib/pages/aboutPage.dart:135-148` — "James" (lead dev) → "Luqman"
+- [x] `budget/lib/pages/aboutPage.dart:116,119,144` — `dapperappdeveloper@gmail.com` → `luqmanhakim.dev@gmail.com`
+- [x] `budget/lib/pages/premiumPage.dart:708-709` — `dapperappdeveloper@gmail.com` → `luqmanhakim.dev@gmail.com`
+- [x] `budget/lib/struct/settings.dart:351,354,391` — `dapperappdeveloper@gmail.com` → `luqmanhakim.dev@gmail.com`
+- [x] `budget/lib/pages/aboutPage.dart:193` — `"made-in-canada"` → `"vibe-in-malaysia"` (new translation key)
+- [x] `budget/lib/pages/premiumPage.dart:1426` — `ko-fi.com/dapperappdeveloper` → removed (PremiumBanner now returns empty)
+- [x] `README.md:164` — `dapperappdeveloper@gmail.com` → `luqmanhakim.dev@gmail.com`
 
 ---
 
