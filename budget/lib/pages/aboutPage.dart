@@ -860,15 +860,6 @@ class AboutLinks extends StatelessWidget {
               text: "app-is-open-source".tr(namedArgs: {"app": globalAppName}),
             ),
             const HorizontalBreak(padding: EdgeInsetsDirectional.zero),
-            _buildTappable(
-              context: context,
-              isExternalLink: true,
-              onTap: () => openUrl("https://cashewapp.web.app/faq.html"),
-              icon: appStateSettings["outlinedIcons"]
-                  ? Icons.live_help_outlined
-                  : Icons.live_help_rounded,
-              text: "guide-and-faq".tr(),
-            ),
             const HorizontalBreak(padding: EdgeInsetsDirectional.zero),
             _buildTappable(
               context: context,
@@ -899,16 +890,6 @@ class AboutLinks extends StatelessWidget {
                   ? Icons.door_front_door_outlined
                   : Icons.door_front_door_rounded,
               text: "view-app-intro".tr(),
-            ),
-            const HorizontalBreak(padding: EdgeInsetsDirectional.zero),
-            _buildTappable(
-              context: context,
-              isExternalLink: true,
-              onTap: () => openUrl("https://cashewapp.web.app/policy.html"),
-              icon: appStateSettings["outlinedIcons"]
-                  ? Icons.policy_outlined
-                  : Icons.policy_rounded,
-              text: "privacy-policy".tr(),
             ),
             const HorizontalBreak(padding: EdgeInsetsDirectional.zero),
             _buildTappable(

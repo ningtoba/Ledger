@@ -97,19 +97,7 @@ class MoreActionsPageState extends State<MoreActionsPage> {
           CustomPopupMenuButton(
             showButtons: true,
             keepOutFirst: true,
-            items: [
-              if (appStateSettings["showFAQAndHelpLink"] == true)
-                DropdownItemMenu(
-                  id: "open-faq",
-                  label: "faq".tr(),
-                  icon: appStateSettings["outlinedIcons"]
-                      ? Icons.live_help_outlined
-                      : Icons.live_help_rounded,
-                  action: () {
-                    openUrl("https://cashewapp.web.app/faq.html");
-                  },
-                ),
-            ],
+            items: [],
           ),
         ],
         listWidgets: [

@@ -347,13 +347,7 @@ class AccountsPageState extends State<AccountsPage> {
                           ? Padding(
                               padding: const EdgeInsetsDirectional.symmetric(
                                   vertical: 20, horizontal: 7),
-                              child: Tappable(
-                                borderRadius: 15,
-                                onTap: () {
-                                  openUrl(
-                                      "https://cashewapp.web.app/policy.html");
-                                },
-                                child: Padding(
+                              child: Padding(
                                   padding:
                                       const EdgeInsetsDirectional.symmetric(
                                           horizontal: 8, vertical: 10),

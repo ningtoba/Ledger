@@ -385,7 +385,7 @@ Future executeAppLink(BuildContext? context, Uri uri,
 //             loadingIndeterminateKey.currentState?.setVisibility(false);
 //           },
 //           onNavigationRequest: (NavigationRequest request) {
-//             if (request.url.startsWith('https://cashewapp.web.app/')) {
+  // Comment removed: old Cashew deep link domain reference
 //               return NavigationDecision.navigate;
 //             } else {
 //               openUrl(request.url);

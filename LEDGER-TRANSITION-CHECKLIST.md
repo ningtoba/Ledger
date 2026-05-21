@@ -101,14 +101,14 @@ About ~69 items across 9 categories.
 - [x] `budget/lib/widgets/accountAndBackup.dart:1518` — `"cashew-"` → `"ledger-"`
 
 ### External URLs (Cashew Domains)
-- [ ] `budget/lib/pages/aboutPage.dart:866` — `cashewapp.web.app/faq.html` → your URL
-- [ ] `budget/lib/pages/aboutPage.dart:907` — `cashewapp.web.app/policy.html` → your URL
-- [ ] `budget/lib/pages/accountsPage.dart:354` — `cashewapp.web.app/policy.html` → your URL
-- [ ] `budget/lib/pages/settingsPage.dart:110` — `cashewapp.web.app/faq.html` → your URL
-- [ ] `budget/lib/pages/premiumPage.dart:712` — `cashewapp.web.app/faq.html#restoring-purchases` → your URL
-- [ ] `budget/lib/widgets/importCSV.dart:245` — `cashewapp.web.app/faq.html#import-csv-data` → your URL
-- [ ] `budget/lib/widgets/ratingPopup.dart:127` — `cashewapp.web.app/faq.html` → your URL
-- [ ] `budget/web/index.html:43-52` — 4x OG/Twitter meta tags pointing to `cashewapp.web.app/assets/preview.png` → your hosted preview
+- [x] `budget/lib/pages/aboutPage.dart:866` — `cashewapp.web.app/faq.html` → removed (no website yet)
+- [x] `budget/lib/pages/aboutPage.dart:907` — `cashewapp.web.app/policy.html` → removed (no website yet)
+- [x] `budget/lib/pages/accountsPage.dart:354` — `cashewapp.web.app/policy.html` → removed (Tappable stripped, text kept)
+- [x] `budget/lib/pages/settingsPage.dart:110` — `cashewapp.web.app/faq.html` → removed (FAQ dropdown item removed)
+- [x] `budget/lib/pages/premiumPage.dart:712` — `cashewapp.web.app/faq.html#restoring-purchases` → already gone (file deleted)
+- [x] `budget/lib/widgets/importCSV.dart:245` — `cashewapp.web.app/faq.html#import-csv-data` → removed (help button set to null)
+- [x] `budget/lib/widgets/ratingPopup.dart:127` — `cashewapp.web.app/faq.html` → removed (FAQ link removed)
+- [x] `budget/web/index.html:43-52` — 4x OG/Twitter meta tags — removed `og:image` and `twitter:image` (no preview image hosted)
 
 ### Translations
 - [ ] `budget/assets/translations/generated/no.json:475` — `"støtter cashew"` → `"støtter Ledger"`
