@@ -130,7 +130,7 @@ About ~69 items across 9 categories.
 - [ ] `budget/lib/pages/settingsPage.dart:185` — Commented-out GitHub link — clean up
 - [ ] `budget/lib/widgets/util/appLinks.dart:388` — Commented-out Cashew domain — clean up
 - [ ] `budget/android/app/src/main/AndroidManifest.xml:125-141` — Commented-out notification service XML — clean up
-- [ ] `budget/pubspec.yaml:1` — `name: budget` → consider `ledger` (internal package name)
+- [ ] `budget/pubspec.yaml:1` — `name: budget` → consider `ledger` (this controls Firebase web app nickname — change before re-running `flutterfire configure`)
 
 ---
 

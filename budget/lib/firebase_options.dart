@@ -58,7 +58,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCRdYGvQPt6z2RMrTiT07IrokS9SE4s4UY',
-    appId: '1:938370323736:android:2fa7bce41b9bd9b37a7a6d',
+    appId: '1:938370323736:android:066e3acd460e98157a7a6d',
     messagingSenderId: '938370323736',
     projectId: 'ledger-626f4',
     storageBucket: 'ledger-626f4.firebasestorage.app',
@@ -66,12 +66,12 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAbVcMnQ_0Z3iYc17fvWE60FhmvpjYELtQ',
-    appId: '1:938370323736:ios:37fbbe4134c8cf377a7a6d',
+    appId: '1:938370323736:ios:494613ec959aff707a7a6d',
     messagingSenderId: '938370323736',
     projectId: 'ledger-626f4',
     storageBucket: 'ledger-626f4.firebasestorage.app',
-    iosClientId: '938370323736-r3mgkkuj6c1o2c5oe435duf5n96qka1l.apps.googleusercontent.com',
-    iosBundleId: 'com.ningtoba.ledger',
+    iosClientId: '938370323736-5ad281gd9kdpfluj27a22kvvjd7mogm4.apps.googleusercontent.com',
+    iosBundleId: 'com.ningtoba.ledger.RunnerTests',
   );
 
 }
