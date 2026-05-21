@@ -45,7 +45,7 @@ About ~69 items across 9 categories.
 - [x] 🔥 `budget/ios/Runner.xcodeproj/project.pbxproj` — 3x `PRODUCT_BUNDLE_IDENTIFIER = "com.budget.tracker-app"` → `com.ningtoba.ledger`
 - [x] 🔥 `budget/ios/Runner.xcodeproj/project.pbxproj` — test target bundle IDs → `com.ningtoba.ledger.RunnerTests`
 - [x] 🔥 `budget/android/app/src/main/kotlin/.../*.kt` — 5 Kotlin files: `package com.budget.tracker_app` → `com.ningtoba.ledger` (+ moved to correct dir)
-- [ ] `budget/lib/firebase_options.dart:74` — `iosBundleId: 'com.budget.tracker-app'` → new ID
+- [x] `budget/lib/firebase_options.dart:74` — `iosBundleId: 'com.budget.tracker-app'` → `com.ningtoba.ledger`
 
 ### Apple Developer
 - [ ] `budget/ios/Runner.xcodeproj/project.pbxproj` — Replace `DEVELOPMENT_TEAM = HCL9V2D3XY` with YOUR team ID

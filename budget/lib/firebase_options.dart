@@ -71,7 +71,7 @@ class DefaultFirebaseOptions {
     projectId: 'ledger-626f4',
     storageBucket: 'ledger-626f4.firebasestorage.app',
     iosClientId: '938370323736-r3mgkkuj6c1o2c5oe435duf5n96qka1l.apps.googleusercontent.com',
-    iosBundleId: 'com.budget.budget.RunnerTests',
+    iosBundleId: 'com.ningtoba.ledger',
   );
 
 }
