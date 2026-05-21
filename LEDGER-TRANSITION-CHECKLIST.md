@@ -10,12 +10,12 @@ About ~69 items across 9 categories.
 ## 1. BRAND IDENTITY (App Name, Icons, Splash, Deep Links)
 
 ### App Display Names
-- [ ] 🔥 `budget/android/app/src/main/AndroidManifest.xml:33` — `android:label="Cashew"` → `"Ledger"`
-- [ ] 🔥 `budget/ios/Runner/Info.plist:12` — `"Cashew uses photos..."` → `"Ledger uses photos..."`
-- [ ] 🔥 `budget/ios/Runner/Info.plist:14` — `"Cashew uses the camera..."` → `"Ledger uses the camera..."`
-- [ ] 🔥 `budget/ios/Runner/Info.plist:22` — `CFBundleDisplayName = "Cashew"` → `"Ledger"`
-- [ ] 🔥 `budget/ios/Runner.xcodeproj/project.pbxproj` — 3x `INFOPLIST_KEY_CFBundleDisplayName = Cashew` → `Ledger`
-- [ ] `budget/ios/Runner/Info.plist:30` — `CFBundleName = "budget"` → `"Ledger"`
+- [x] 🔥 `budget/android/app/src/main/AndroidManifest.xml:33` — `android:label="Cashew"` → `"Ledger"`
+- [x] 🔥 `budget/ios/Runner/Info.plist:12` — `"Cashew uses photos..."` → `"Ledger uses photos..."`
+- [x] 🔥 `budget/ios/Runner/Info.plist:14` — `"Cashew uses the camera..."` → `"Ledger uses the camera..."`
+- [x] 🔥 `budget/ios/Runner/Info.plist:22` — `CFBundleDisplayName = "Cashew"` → `"Ledger"`
+- [x] 🔥 `budget/ios/Runner.xcodeproj/project.pbxproj` — 3x `INFOPLIST_KEY_CFBundleDisplayName = Cashew` → `Ledger`
+- [x] `budget/ios/Runner/Info.plist:30` — `CFBundleName = "budget"` → `"Ledger"`
 
 ### App Icons
 - [ ] `budget/android/app/src/main/res/mipmap-*/ic_launcher*.png` — Replace 20+ Android icon PNGs with Ledger design
@@ -29,8 +29,8 @@ About ~69 items across 9 categories.
 - [ ] `budget/ios/Runner/Base.lproj/LaunchScreen.storyboard` — Update LaunchImage with Ledger branding
 
 ### Deep Links / Universal Links
-- [ ] 🔥 `budget/android/app/src/main/AndroidManifest.xml:52-53` — `android:host="cashewapp.web.app"` → your domain
-- [ ] 🔥 `budget/ios/Runner/Runner.entitlements:9` — `applinks:cashewapp.web.app` → your domain
+- [x] 🔥 `budget/android/app/src/main/AndroidManifest.xml:52-53` — `android:host="cashewapp.web.app"` → `ledger-626f4.web.app`
+- [x] 🔥 `budget/ios/Runner/Runner.entitlements:9` — `applinks:cashewapp.web.app` → `ledger-626f4.web.app`
 - [ ] `budget/lib/widgets/util/appLinks.dart:388` — Comment referencing old domain (clean up)
 
 ---
@@ -38,13 +38,13 @@ About ~69 items across 9 categories.
 ## 2. DEVELOPER IDENTITY (Package Name, Bundle ID, Author Info)
 
 ### Package Name / Bundle ID
-- [ ] 🔥 `budget/android/app/build.gradle:44` — `applicationId "com.budget.tracker_app"` → your ID (e.g. `com.ningtoba.ledger`)
-- [ ] 🔥 `budget/android/app/src/main/AndroidManifest.xml:2` — `package="com.budget.tracker_app"` → match build.gradle
-- [ ] 🔥 `budget/android/app/src/debug/AndroidManifest.xml:2` — same
-- [ ] 🔥 `budget/android/app/src/profile/AndroidManifest.xml:2` — same
-- [ ] 🔥 `budget/ios/Runner.xcodeproj/project.pbxproj` — 3x `PRODUCT_BUNDLE_IDENTIFIER = "com.budget.tracker-app"` → your ID
-- [ ] 🔥 `budget/ios/Runner.xcodeproj/project.pbxproj` — test target bundle IDs (lines ~522, 540, 556)
-- [ ] 🔥 `budget/android/app/src/main/kotlin/.../*.kt` — 5 Kotlin files: `package com.budget.tracker_app` → new package (and move files to new directory)
+- [x] 🔥 `budget/android/app/build.gradle:44` — `applicationId "com.budget.tracker_app"` → `com.ningtoba.ledger`
+- [x] 🔥 `budget/android/app/src/main/AndroidManifest.xml:2` — `package="com.budget.tracker_app"` → `com.ningtoba.ledger`
+- [x] 🔥 `budget/android/app/src/debug/AndroidManifest.xml:2` — same
+- [x] 🔥 `budget/android/app/src/profile/AndroidManifest.xml:2` — same
+- [x] 🔥 `budget/ios/Runner.xcodeproj/project.pbxproj` — 3x `PRODUCT_BUNDLE_IDENTIFIER = "com.budget.tracker-app"` → `com.ningtoba.ledger`
+- [x] 🔥 `budget/ios/Runner.xcodeproj/project.pbxproj` — test target bundle IDs → `com.ningtoba.ledger.RunnerTests`
+- [x] 🔥 `budget/android/app/src/main/kotlin/.../*.kt` — 5 Kotlin files: `package com.budget.tracker_app` → `com.ningtoba.ledger` (+ moved to correct dir)
 - [ ] `budget/lib/firebase_options.dart:74` — `iosBundleId: 'com.budget.tracker-app'` → new ID
 
 ### Apple Developer
@@ -162,9 +162,9 @@ About ~69 items across 9 categories.
 
 ## Critical Path (Recommended Order)
 
-1. **Create your Firebase project** → regenerate firebase_options.dart + google-services.json
-2. **Change package name / bundle ID** → Android manifests, build.gradle, iOS pbxproj, Kotlin files
-3. **Update app display names** → AndroidManifest label, iOS Info.plist + pbxproj
+1. **Change package name / bundle ID** → Android manifests, build.gradle, iOS pbxproj, Kotlin files
+2. **Update app display names** → AndroidManifest label, iOS Info.plist + pbxproj
+3. **Create your Firebase project** → regenerate firebase_options.dart + google-services.json
 4. **Replace app icons** → Android mipmaps, iOS AppIcon assets, web favicons
 5. **Replace all external URLs** → FAQ, policy, social meta tags
 6. **Update author info** → about page, email addresses, Ko-fi link

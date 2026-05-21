@@ -47,30 +47,31 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBGiaRl72d4k3Ki0dh8ra-gU4v2z04CgIw',
-    appId: '1:267621253497:web:12558fe9abebf7fa842fa8',
-    messagingSenderId: '267621253497',
-    projectId: 'budget-app-flutter',
-    authDomain: 'budget-app-flutter.firebaseapp.com',
-    storageBucket: 'budget-app-flutter.appspot.com',
+    apiKey: 'AIzaSyBjwHFH57_8GkFYwVBm0oeijRrCHhnS6Us',
+    appId: '1:938370323736:web:38a07df4f135a9557a7a6d',
+    messagingSenderId: '938370323736',
+    projectId: 'ledger-626f4',
+    authDomain: 'ledger-626f4.firebaseapp.com',
+    storageBucket: 'ledger-626f4.firebasestorage.app',
+    measurementId: 'G-ZRP3ZRTSZN',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDNVDtwGJUHBZohwB2RDeUco-5hAGfx2bA',
-    appId: '1:267621253497:android:e7a2967eaf8dd072842fa8',
-    messagingSenderId: '267621253497',
-    projectId: 'budget-app-flutter',
-    storageBucket: 'budget-app-flutter.appspot.com',
+    apiKey: 'AIzaSyCRdYGvQPt6z2RMrTiT07IrokS9SE4s4UY',
+    appId: '1:938370323736:android:2fa7bce41b9bd9b37a7a6d',
+    messagingSenderId: '938370323736',
+    projectId: 'ledger-626f4',
+    storageBucket: 'ledger-626f4.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBts7THLrbIh-xReN70k5AsknAMwBNhrD0',
-    appId: '1:267621253497:ios:17af91fbac7c01b9842fa8',
-    messagingSenderId: '267621253497',
-    projectId: 'budget-app-flutter',
-    storageBucket: 'budget-app-flutter.appspot.com',
-    androidClientId: '267621253497-0h976snjlf34gs8m75bh8nik8gcvr2mk.apps.googleusercontent.com',
-    iosClientId: '267621253497-ih94g1srq37gun4mdmvadgl3ev588vpf.apps.googleusercontent.com',
-    iosBundleId: 'com.budget.tracker-app',
+    apiKey: 'AIzaSyAbVcMnQ_0Z3iYc17fvWE60FhmvpjYELtQ',
+    appId: '1:938370323736:ios:37fbbe4134c8cf377a7a6d',
+    messagingSenderId: '938370323736',
+    projectId: 'ledger-626f4',
+    storageBucket: 'ledger-626f4.firebasestorage.app',
+    iosClientId: '938370323736-r3mgkkuj6c1o2c5oe435duf5n96qka1l.apps.googleusercontent.com',
+    iosBundleId: 'com.budget.budget.RunnerTests',
   );
+
 }
