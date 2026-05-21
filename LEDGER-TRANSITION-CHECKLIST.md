@@ -81,8 +81,14 @@ About ~69 items across 9 categories.
 
 ## 4. IN-APP PURCHASES
 
-- [ ] 🔥 `budget/lib/pages/premiumPage.dart:34-42` — Replace `cashew.pro.yearly`, `cashew.pro.monthly`, `cashew.pro.life`, `cashew.pro.lifetime` with YOUR product IDs
-- [ ] 🔥 `budget/lib/pages/premiumPage.dart:486,489` — Update subscription management URLs with new SKU and package name
+- [x] 🔥 `budget/lib/pages/premiumPage.dart` — Deleted entirely (1407 lines). All IAP code removed.
+- [x] 🔥 `budget/lib/struct/defaultPreferences.dart` — Removed `purchaseID`, `premiumPopupAddTransactionCount`, `premiumPopupAddTransactionLastShown`, `premiumPopupFreeSeen` keys
+- [x] 🔥 `budget/pubspec.yaml` — Removed `in_app_purchase: ^3.2.0` dependency
+- [x] Removed IAP imports and premium popup calls from 11 files (navigationFramework, settings, defaultPreferences/settings, addTransactionPage, addObjectivePage, addBudgetPage, budgetPage, walletDetailsPage, selectColor)
+- [x] Removed `FadeOutAndLockFeature` and `LockedFeature` widget wrappers (walletDetailsPage, selectColor)
+- [x] Removed `PremiumBanner` from settings page (was already `SizedBox.shrink()`)
+- [x] Removed 28 IAP translation keys across 46 language files + master CSV
+- [x] `README.md` — Removed Payments row from stack table
 
 ---
 

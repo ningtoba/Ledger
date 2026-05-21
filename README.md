@@ -73,7 +73,6 @@ Download the latest APK or App Bundle from the [Releases page](https://github.co
 | State | Provider + shared_preferences |
 | Auth | Firebase Auth + Google Sign-In |
 | Sync | Cloud Firestore + Google Drive API |
-| Payments | in_app_purchase (premium features) |
 | Localization | easy_localization (40+ languages) |
 | CI/CD | GitHub Actions |
 

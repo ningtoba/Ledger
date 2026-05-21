@@ -6,7 +6,6 @@ import 'package:budget/pages/addTransactionPage.dart';
 import 'package:budget/pages/editBudgetLimitsPage.dart';
 import 'package:budget/pages/homePage/homePageLineGraph.dart';
 import 'package:budget/pages/pastBudgetsPage.dart';
-import 'package:budget/pages/premiumPage.dart';
 import 'package:budget/pages/transactionFilters.dart';
 import 'package:budget/pages/walletDetailsPage.dart';
 import 'package:budget/struct/databaseGlobal.dart';
@@ -114,17 +113,13 @@ class _BudgetPageContentState extends State<_BudgetPageContent> {
 
   @override
   void initState() {
-    Future.delayed(Duration.zero, () {
-      if (isPastBudget == true) premiumPopupPastBudgets(context);
-    });
     super.initState();
   }
 
   void changeSelectedDateRange(int delta) async {
     int index = (dateForRangeIndex) - delta;
     if (index >= 0) {
-      if (budgetHistoryDismissedPremium == false)
-        budgetHistoryDismissedPremium = await premiumPopupPastBudgets(context);
+      budgetHistoryDismissedPremium = false;
       if (budgetHistoryDismissedPremium) {
         setState(() {
           dateForRangeIndex = index;
